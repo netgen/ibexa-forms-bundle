@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle;
+namespace Netgen\Bundle\IbexaFormsBundle;
 
 use Netgen\Bundle\IbexaFormsBundle\DependencyInjection\Compiler\FieldTypeHandlerRegistryPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
