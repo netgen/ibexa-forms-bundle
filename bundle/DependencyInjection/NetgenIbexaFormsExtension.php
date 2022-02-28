@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\DependencyInjection;
+namespace Netgen\Bundle\IbexaFormsBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-final class NetgenEzFormsExtension extends Extension
+final class NetgenIbexaFormsExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {

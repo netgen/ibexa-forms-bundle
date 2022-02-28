@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form;
+namespace Netgen\Bundle\IbexaFormsBundle\Form;
 
 use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\Core\Repository\Values\Content\Content;

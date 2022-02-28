@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 
 use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Core\FieldType\Country\Value as CountryValue;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use function array_flip;

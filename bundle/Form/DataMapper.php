@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form;
+namespace Netgen\Bundle\IbexaFormsBundle\Form;
 
 use DateTime;
 use Symfony\Component\Form\DataMapperInterface;
@@ -20,7 +20,7 @@ use function is_object;
 abstract class DataMapper implements DataMapperInterface
 {
     /**
-     * @var \Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry
+     * @var \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry
      */
     protected $fieldTypeHandlerRegistry;
 
@@ -32,7 +32,7 @@ abstract class DataMapper implements DataMapperInterface
     /**
      * Creates a new property path mapper.
      *
-     * @param \Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry $fieldTypeHandlerRegistry
+     * @param \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry $fieldTypeHandlerRegistry
      * @param \Symfony\Component\PropertyAccess\PropertyAccessorInterface $propertyAccessor
      */
     public function __construct(
@@ -56,7 +56,7 @@ abstract class DataMapper implements DataMapperInterface
             $config = $form->getConfig();
 
             if ($data instanceof DataWrapper && null !== $propertyPath && $config->getMapped()) {
-                /* @var $data \Netgen\Bundle\EzFormsBundle\Form\DataWrapper */
+                /* @var $data \Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper */
                 $this->mapToForm($form, $data, $propertyPath);
             } elseif (!$empty && null !== $propertyPath && $config->getMapped()) {
                 $form->setData($this->propertyAccessor->getValue($data, $propertyPath));
@@ -95,7 +95,7 @@ abstract class DataMapper implements DataMapperInterface
             // If $data is out ContentCreateStruct, we need to map it to the corresponding field
             // in the struct
             if ($data instanceof DataWrapper) {
-                /* @var $data \Netgen\Bundle\EzFormsBundle\Form\DataWrapper */
+                /* @var $data \Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper */
                 $this->mapFromForm($form, $data, $propertyPath);
 
                 continue;
@@ -156,8 +156,8 @@ abstract class DataMapper implements DataMapperInterface
         return
             $value === null
             && (
-                $form->getRoot()->has("ezforms_skip_empty_update_{$fieldDefinitionIdentifier}")
-                && $form->getRoot()->get("ezforms_skip_empty_update_{$fieldDefinitionIdentifier}")->getData() === 'yes'
+                $form->getRoot()->has("ibexa_forms_skip_empty_update_{$fieldDefinitionIdentifier}")
+                && $form->getRoot()->get("ibexa_forms_skip_empty_update_{$fieldDefinitionIdentifier}")->getData() === 'yes'
             )
         ;
     }

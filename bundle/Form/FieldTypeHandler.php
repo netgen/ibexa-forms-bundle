@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form;
+namespace Netgen\Bundle\IbexaFormsBundle\Form;
 
 use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\Core\Repository\Values\Content\Content;
@@ -78,12 +78,12 @@ abstract class FieldTypeHandler implements FieldTypeHandlerInterface
 
         $options['label'] = $fieldDefinition->getName($languageCode);
         $options['required'] = $fieldDefinition->isRequired;
-        $options['ezforms']['description'] = $fieldDefinition->getDescription($languageCode);
-        $options['ezforms']['language_code'] = $languageCode;
-        $options['ezforms']['fielddefinition'] = $fieldDefinition;
+        $options['ibexa_forms']['description'] = $fieldDefinition->getDescription($languageCode);
+        $options['ibexa_forms']['language_code'] = $languageCode;
+        $options['ibexa_forms']['fielddefinition'] = $fieldDefinition;
 
         if ($content !== null) {
-            $options['ezforms']['content'] = $content;
+            $options['ibexa_forms']['content'] = $content;
         }
 
         $options['constraints'] = [];
@@ -106,7 +106,7 @@ abstract class FieldTypeHandler implements FieldTypeHandlerInterface
         ];
 
         $formBuilder->add(
-            "ezforms_skip_empty_update_{$fieldDefinitionIdentifier}",
+            "ibexa_forms_skip_empty_update_{$fieldDefinitionIdentifier}",
             HiddenType::class,
             $options
         );

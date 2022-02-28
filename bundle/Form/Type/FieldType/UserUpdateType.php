@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\Type\FieldType;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\Type\FieldType;
 
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -28,7 +28,7 @@ final class UserUpdateType extends UserType
             'required' => false,
             'invalid_message' => 'Both passwords must match.',
             'options' => [
-                'constraints' => $this->getPasswordConstraints($options['ezforms']['fielddefinition'] ?? null, false),
+                'constraints' => $this->getPasswordConstraints($options['ibexa_forms']['fielddefinition'] ?? null, false),
             ],
             'first_options' => [
                 'label' => 'New password (leave empty to keep current password)',
@@ -45,6 +45,6 @@ final class UserUpdateType extends UserType
 
     public function getBlockPrefix(): string
     {
-        return 'ezforms_ezuser_update';
+        return 'ibexa_forms_ezuser_update';
     }
 }

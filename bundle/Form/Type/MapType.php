@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\Type;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -14,20 +14,20 @@ final class MapType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder->add('address', TextType::class, [
-            'label' => 'ezforms.form.map.address.label',
+            'label' => 'ibexa_forms.form.map.address.label',
         ]);
 
         $builder->add('latitude', NumberType::class, [
-            'label' => 'ezforms.form.map.latitude.label',
+            'label' => 'ibexa_forms.form.map.latitude.label',
         ]);
 
         $builder->add('longitude', NumberType::class, [
-            'label' => 'ezforms.form.map.longitude.label',
+            'label' => 'ibexa_forms.form.map.longitude.label',
         ]);
     }
 
     public function getBlockPrefix(): string
     {
-        return 'ezforms_map';
+        return 'ibexa_forms_map';
     }
 }

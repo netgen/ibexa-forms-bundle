@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\DataMapper;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\DataMapper;
 
 use Ibexa\Core\FieldType\TextLine\Value as TextLineValue;
 use Ibexa\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
-use Netgen\Bundle\EzFormsBundle\Form\DataMapper\InformationCollectionMapper;
-use Netgen\Bundle\EzFormsBundle\Form\DataWrapper;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry;
-use Netgen\Bundle\EzFormsBundle\Form\Payload\InformationCollectionStruct;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataMapper\InformationCollectionMapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry;
+use Netgen\Bundle\IbexaFormsBundle\Form\Payload\InformationCollectionStruct;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
@@ -24,7 +24,7 @@ final class InformationCollectionMapperTest extends TestCase
     private $mapper;
 
     /**
-     * @var \Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry
+     * @var \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry
      */
     private $registry;
 
@@ -44,7 +44,7 @@ final class InformationCollectionMapperTest extends TestCase
             ->disableOriginalConstructor()
                         ->getMock();
 
-        $this->handler = $this->getMockBuilder('Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerInterface')
+        $this->handler = $this->getMockBuilder('Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerInterface')
             ->disableOriginalConstructor()
                         ->getMock();
 
@@ -56,7 +56,7 @@ final class InformationCollectionMapperTest extends TestCase
 
     public function testInstanceOfDataMapper(): void
     {
-        self::assertInstanceOf('\Netgen\Bundle\EzFormsBundle\Form\DataMapper', $this->mapper);
+        self::assertInstanceOf('\Netgen\Bundle\IbexaFormsBundle\Form\DataMapper', $this->mapper);
     }
 
     public function testMapFormsToData(): void

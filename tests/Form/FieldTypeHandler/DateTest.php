@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\FieldTypeHandler;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\FieldTypeHandler;
 
 use DateTime;
 use Ibexa\Core\FieldType\Date as DateValue;
 use Ibexa\Core\Repository\Values\Content\Content;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler\Date;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler\Date;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormBuilder;
 

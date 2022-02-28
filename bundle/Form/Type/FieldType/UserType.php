@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\Type\FieldType;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\Type\FieldType;
 
 use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition;
 use Symfony\Component\Form\AbstractType;

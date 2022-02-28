@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\Payload;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\Payload;
 
 final class InformationCollectionStruct
 {

@@ -4,12 +4,12 @@ imports:
     - { resource: form_types.yaml }
 
 services:
-    # Services tagged with 'netgen.ezforms.form.fieldtype_handler' will be registered
+    # Services tagged with 'netgen.ibexa_forms.form.fieldtype_handler' will be registered
     # to this one during service container compilation. See imported resources.
-    netgen.ezforms.form.fieldtype_handler_registry:
-        class: Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry
+    netgen.ibexa_forms.form.fieldtype_handler_registry:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry
 
-    netgen.ezforms.form.extension.fieldtype:
-        class: Netgen\Bundle\EzFormsBundle\Form\Extension\FieldTypeTypeExtension
+    netgen.ibexa_forms.form.extension.fieldtype:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\Extension\FieldTypeTypeExtension
         tags:
             - { name: form.type_extension, alias: form, extended_type: Symfony\Component\Form\Extension\Core\Type\FormType }

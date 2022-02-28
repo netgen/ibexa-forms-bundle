@@ -1,76 +1,76 @@
 services:
-    netgen.ezforms.form.data_mapper.create_content:
-        class: Netgen\Bundle\EzFormsBundle\Form\DataMapper\CreateContentMapper
+    netgen.ibexa_forms.form.data_mapper.create_content:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\DataMapper\CreateContentMapper
         arguments:
-            - "@netgen.ezforms.form.fieldtype_handler_registry"
+            - "@netgen.ibexa_forms.form.fieldtype_handler_registry"
 
-    netgen.ezforms.form.type.create_content:
-        class: Netgen\Bundle\EzFormsBundle\Form\Type\CreateContentType
+    netgen.ibexa_forms.form.type.create_content:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\Type\CreateContentType
         arguments:
-            - "@netgen.ezforms.form.fieldtype_handler_registry"
-            - "@netgen.ezforms.form.data_mapper.create_content"
+            - "@netgen.ibexa_forms.form.fieldtype_handler_registry"
+            - "@netgen.ibexa_forms.form.data_mapper.create_content"
         tags:
-            - { name: form.type, alias: ezforms_create_content }
+            - { name: form.type, alias: ibexa_forms_create_content }
 
-    netgen.ezforms.form.data_mapper.create_user:
-        class: Netgen\Bundle\EzFormsBundle\Form\DataMapper\CreateUserMapper
+    netgen.ibexa_forms.form.data_mapper.create_user:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\DataMapper\CreateUserMapper
         arguments:
-            - "@netgen.ezforms.form.fieldtype_handler_registry"
+            - "@netgen.ibexa_forms.form.fieldtype_handler_registry"
 
-    netgen.ezforms.form.type.create_user:
-        class: Netgen\Bundle\EzFormsBundle\Form\Type\CreateUserType
+    netgen.ibexa_forms.form.type.create_user:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\Type\CreateUserType
         arguments:
-            - "@netgen.ezforms.form.fieldtype_handler_registry"
-            - "@netgen.ezforms.form.data_mapper.create_user"
+            - "@netgen.ibexa_forms.form.fieldtype_handler_registry"
+            - "@netgen.ibexa_forms.form.data_mapper.create_user"
         tags:
-            - { name: form.type, alias: ezforms_create_user }
+            - { name: form.type, alias: ibexa_forms_create_user }
 
-    netgen.ezforms.form.data_mapper.update_content:
-        class: Netgen\Bundle\EzFormsBundle\Form\DataMapper\UpdateContentMapper
+    netgen.ibexa_forms.form.data_mapper.update_content:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\DataMapper\UpdateContentMapper
         arguments:
-            - "@netgen.ezforms.form.fieldtype_handler_registry"
+            - "@netgen.ibexa_forms.form.fieldtype_handler_registry"
 
-    netgen.ezforms.form.type.update_content:
-        class: Netgen\Bundle\EzFormsBundle\Form\Type\UpdateContentType
+    netgen.ibexa_forms.form.type.update_content:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\Type\UpdateContentType
         arguments:
-            - "@netgen.ezforms.form.fieldtype_handler_registry"
-            - "@netgen.ezforms.form.data_mapper.update_content"
+            - "@netgen.ibexa_forms.form.fieldtype_handler_registry"
+            - "@netgen.ibexa_forms.form.data_mapper.update_content"
         tags:
-            - { name: form.type, alias: ezforms_update_content }
+            - { name: form.type, alias: ibexa_forms_update_content }
 
-    netgen.ezforms.form.data_mapper.update_user:
-        class: Netgen\Bundle\EzFormsBundle\Form\DataMapper\UpdateUserMapper
+    netgen.ibexa_forms.form.data_mapper.update_user:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\DataMapper\UpdateUserMapper
         arguments:
-            - "@netgen.ezforms.form.fieldtype_handler_registry"
+            - "@netgen.ibexa_forms.form.fieldtype_handler_registry"
 
-    netgen.ezforms.form.type.update_user:
-        class: Netgen\Bundle\EzFormsBundle\Form\Type\UpdateUserType
+    netgen.ibexa_forms.form.type.update_user:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\Type\UpdateUserType
         arguments:
-            - "@netgen.ezforms.form.fieldtype_handler_registry"
-            - "@netgen.ezforms.form.data_mapper.update_user"
+            - "@netgen.ibexa_forms.form.fieldtype_handler_registry"
+            - "@netgen.ibexa_forms.form.data_mapper.update_user"
         tags:
-            - { name: form.type, alias: ezforms_update_user }
+            - { name: form.type, alias: ibexa_forms_update_user }
 
-    netgen.ezforms.form.url_type:
-        class: Netgen\Bundle\EzFormsBundle\Form\Type\UrlType
+    netgen.ibexa_forms.form.url_type:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\Type\UrlType
         tags:
-            - { name: form.type, alias: ezforms_url }
+            - { name: form.type, alias: ibexa_forms_url }
 
-    netgen.ezforms.form.map_type:
-        class: Netgen\Bundle\EzFormsBundle\Form\Type\MapType
+    netgen.ibexa_forms.form.map_type:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\Type\MapType
         tags:
-            - { name: form.type, alias: ezforms_map }
+            - { name: form.type, alias: ibexa_forms_map }
 
-    netgen.ezforms.form.data_mapper.info_collection:
-        class: Netgen\Bundle\EzFormsBundle\Form\DataMapper\InformationCollectionMapper
+    netgen.ibexa_forms.form.data_mapper.info_collection:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\DataMapper\InformationCollectionMapper
         arguments:
-            - "@netgen.ezforms.form.fieldtype_handler_registry"
+            - "@netgen.ibexa_forms.form.fieldtype_handler_registry"
 
-    netgen.ezforms.form.type.info_collection:
-        class: Netgen\Bundle\EzFormsBundle\Form\Type\InformationCollectionType
+    netgen.ibexa_forms.form.type.info_collection:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\Type\InformationCollectionType
         arguments:
-            - "@netgen.ezforms.form.fieldtype_handler_registry"
-            - "@netgen.ezforms.form.data_mapper.info_collection"
+            - "@netgen.ibexa_forms.form.fieldtype_handler_registry"
+            - "@netgen.ibexa_forms.form.data_mapper.info_collection"
             - "@ibexa.config.resolver"
         tags:
-            - { name: form.type, alias: ezforms_information_collection }
+            - { name: form.type, alias: ibexa_forms_information_collection }

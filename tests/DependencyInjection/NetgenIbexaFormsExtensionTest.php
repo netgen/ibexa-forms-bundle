@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\DependencyInjection;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\DependencyInjection;
 
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
-use Netgen\Bundle\EzFormsBundle\DependencyInjection\NetgenEzFormsExtension;
+use Netgen\Bundle\IbexaFormsBundle\DependencyInjection\NetgenIbexaFormsExtension;
 
-final class NetgenEzFormsExtensionTest extends AbstractExtensionTestCase
+final class NetgenIbexaFormsExtensionTest extends AbstractExtensionTestCase
 {
     public function testItSetsValidContainerParameters(): void
     {
@@ -18,7 +18,7 @@ final class NetgenEzFormsExtensionTest extends AbstractExtensionTestCase
     protected function getContainerExtensions(): array
     {
         return [
-            new NetgenEzFormsExtension(),
+            new NetgenIbexaFormsExtension(),
         ];
     }
 

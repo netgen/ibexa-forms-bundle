@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\FieldTypeHandler;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\FieldTypeHandler;
 
 use Ibexa\Core\FieldType\Checkbox\Value as CheckboxValue;
 use Ibexa\Core\Helper\FieldHelper;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler\Checkbox;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler\Checkbox;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilder;
@@ -98,7 +98,7 @@ final class CheckboxTest extends TestCase
             'label' => null,
             'required' => true,
             'constraints' => [new Constraints\NotBlank()],
-            'ezforms' => [
+            'ibexa_forms' => [
                 'description' => null,
                 'language_code' => 'eng-GB',
                 'fielddefinition' => $fieldDefinition,
@@ -125,7 +125,7 @@ final class CheckboxTest extends TestCase
             'label' => null,
             'required' => true,
             'constraints' => [new Constraints\NotBlank()],
-            'ezforms' => [
+            'ibexa_forms' => [
                 'description' => null,
                 'language_code' => 'eng-GB',
                 'fielddefinition' => $fieldDefinition,
@@ -154,7 +154,7 @@ final class CheckboxTest extends TestCase
             'constraints' => [
                 new Constraints\NotBlank(),
             ],
-            'ezforms' => [
+            'ibexa_forms' => [
                 'description' => null,
                 'language_code' => 'eng-GB',
                 'fielddefinition' => $fieldDefinition,

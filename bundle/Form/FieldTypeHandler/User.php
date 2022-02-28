@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 
 use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
-use Netgen\Bundle\EzFormsBundle\Form\Type\FieldType\UserCreateType;
-use Netgen\Bundle\EzFormsBundle\Form\Type\FieldType\UserUpdateType;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\FieldType\UserCreateType;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\FieldType\UserUpdateType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 final class User extends FieldTypeHandler

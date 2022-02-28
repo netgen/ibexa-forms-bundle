@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\Payload;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\Payload;
 
-use Netgen\Bundle\EzFormsBundle\Form\Payload\InformationCollectionStruct;
+use Netgen\Bundle\IbexaFormsBundle\Form\Payload\InformationCollectionStruct;
 use PHPUnit\Framework\TestCase;
 
 final class InformationCollectionStructTest extends TestCase

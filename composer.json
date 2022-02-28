@@ -1,5 +1,5 @@
 {
-    "name": "netgen/ez-forms-bundle",
+    "name": "netgen/ibexa-forms-bundle",
     "description": "Integration of Symfony's Form component with Ibexa Platform Public API",
     "type": "ibexa-bundle",
     "license": "GPL-2.0-only",
@@ -7,10 +7,10 @@
         "ibexa",
         "forms",
         "netgen",
-        "ezforms",
-        "ez-forms-bundle"
+        "ibexa-forms",
+        "ibexa-forms-bundle"
     ],
-    "homepage": "https://github.com/netgen/NetgenEzFormsBundle",
+    "homepage": "https://github.com/netgen/ibexa-forms-bundle",
     "authors": [
         {
             "name": "Netgen",
@@ -37,12 +37,12 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Netgen\\Bundle\\EzFormsBundle\\": "bundle"
+            "Netgen\\Bundle\\IbexaFormsBundle\\": "bundle"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Netgen\\Bundle\\EzFormsBundle\\Tests\\": "tests"
+            "Netgen\\Bundle\\IbexaFormsBundle\\Tests\\": "tests"
         }
     },
     "scripts": {

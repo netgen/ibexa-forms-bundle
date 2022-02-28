@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\FieldTypeHandler;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\FieldTypeHandler;
 
 use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Core\FieldType\BinaryFile\Value as FileValue;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler\BinaryFile;
-use Netgen\Bundle\EzFormsBundle\Tests\Form\Mock\FileMock;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler\BinaryFile;
+use Netgen\Bundle\IbexaFormsBundle\Tests\Form\Mock\FileMock;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormBuilder;
 

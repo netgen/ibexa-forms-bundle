@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\FieldTypeHandler;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\FieldTypeHandler;
 
 use Ibexa\Core\FieldType\TextBlock\Value as TextBlockValue;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler\TextBlock;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler\TextBlock;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormBuilder;
 

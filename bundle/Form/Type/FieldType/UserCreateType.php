@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\Type\FieldType;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\Type\FieldType;
 
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -34,7 +34,7 @@ final class UserCreateType extends UserType
             'type' => PasswordType::class,
             'invalid_message' => 'Both passwords must match.',
             'options' => [
-                'constraints' => $this->getPasswordConstraints($options['ezforms']['fielddefinition'] ?? null),
+                'constraints' => $this->getPasswordConstraints($options['ibexa_forms']['fielddefinition'] ?? null),
             ],
             'first_options' => [
                 'label' => 'Password',
@@ -52,6 +52,6 @@ final class UserCreateType extends UserType
 
     public function getBlockPrefix(): string
     {
-        return 'ezforms_ezuser_create';
+        return 'ibexa_forms_ezuser_create';
     }
 }

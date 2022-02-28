@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form;
 
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry;
-use Netgen\Bundle\EzFormsBundle\Tests\Stubs\Handler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry;
+use Netgen\Bundle\IbexaFormsBundle\Tests\Stubs\Handler;
 use OutOfBoundsException;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;

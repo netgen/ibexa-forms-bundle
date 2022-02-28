@@ -3,10 +3,10 @@ Installation instructions
 
 ## Use Composer
 
-Run the following from your website root folder to install NetgenEzFormsBundle:
+Run the following from your website root folder to install Netgen Ibexa Forms Bundle:
 
 ```bash
-$ composer require netgen/ez-forms-bundle
+$ composer require netgen/ibexa-forms-bundle
 ```
 
 ## Clear the caches

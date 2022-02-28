@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 
 use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Core\FieldType\MapLocation as MapLocationValue;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
-use Netgen\Bundle\EzFormsBundle\Form\Type\MapType;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\MapType;
 use Symfony\Component\Form\FormBuilderInterface;
 use function is_array;
 
@@ -47,7 +47,7 @@ final class MapLocation extends FieldTypeHandler
     ): void {
         $options = $this->getDefaultFieldOptions($fieldDefinition, $languageCode, $content);
 
-        $options['block_name'] = 'ezforms_map';
+        $options['block_name'] = 'ibexa_forms_map';
 
         $formBuilder->add($fieldDefinition->identifier, MapType::class, $options);
     }

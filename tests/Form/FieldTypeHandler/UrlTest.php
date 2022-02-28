@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\FieldTypeHandler;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\FieldTypeHandler;
 
 use Ibexa\Core\FieldType\Url\Value as UrlValue;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler\Url;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler\Url;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormBuilder;
 

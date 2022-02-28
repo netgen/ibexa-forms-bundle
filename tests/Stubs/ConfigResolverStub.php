@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Stubs;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Stubs;
 
 use Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface;
 

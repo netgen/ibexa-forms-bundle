@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\Type;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\Type;
 
 use Ibexa\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
-use Netgen\Bundle\EzFormsBundle\Form\DataWrapper;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry;
-use Netgen\Bundle\EzFormsBundle\Form\Payload\InformationCollectionStruct;
-use Netgen\Bundle\EzFormsBundle\Form\Type\InformationCollectionType;
-use Netgen\Bundle\EzFormsBundle\Tests\Stubs\ConfigResolverStub;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry;
+use Netgen\Bundle\IbexaFormsBundle\Form\Payload\InformationCollectionStruct;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\InformationCollectionType;
+use Netgen\Bundle\IbexaFormsBundle\Tests\Stubs\ConfigResolverStub;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use Symfony\Component\Form\AbstractType;
@@ -39,7 +39,7 @@ final class InformationCollectionTypeTest extends TestCase
     public function testBuildFormWithoutDataWrapperMustThrowException(): void
     {
         $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage('Data must be an instance of Netgen\EzFormsBundle\Form\DataWrapper');
+        $this->expectExceptionMessage('Data must be an instance of Netgen\IbexaFormsBundle\Form\DataWrapper');
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
@@ -63,7 +63,7 @@ final class InformationCollectionTypeTest extends TestCase
     public function testBuildFormDataWrapperPayloadMustBeInformationCollectionStruct(): void
     {
         $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage('Data payload must be an instance of Netgen\Bundle\EzFormsBundle\Form\Payload\InformationCollectionStruct');
+        $this->expectExceptionMessage('Data payload must be an instance of Netgen\Bundle\IbexaFormsBundle\Form\Payload\InformationCollectionStruct');
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 

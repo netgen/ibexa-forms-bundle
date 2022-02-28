@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\FieldTypeHandler;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\FieldTypeHandler;
 
 use Ibexa\Core\FieldType\Integer\Value as IntegerValue;
 use Ibexa\Core\Helper\FieldHelper;
 use Ibexa\Core\Repository\Values\Content\Content;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler\IntegerHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler\IntegerHandler;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilder;
@@ -109,7 +109,7 @@ final class IntegerHandlerTest extends TestCase
                 new Constraints\Range(['min' => 4, 'max' => 10]),
             ],
             'data' => 5,
-            'ezforms' => [
+            'ibexa_forms' => [
                 'description' => null,
                 'language_code' => 'eng-GB',
                 'fielddefinition' => $fieldDefinition,
@@ -146,7 +146,7 @@ final class IntegerHandlerTest extends TestCase
                 new Constraints\NotBlank(),
                 new Constraints\Range(['min' => 4, 'max' => 10]),
             ],
-            'ezforms' => [
+            'ibexa_forms' => [
                 'description' => null,
                 'language_code' => 'eng-GB',
                 'fielddefinition' => $fieldDefinition,
@@ -182,7 +182,7 @@ final class IntegerHandlerTest extends TestCase
                 new Constraints\NotBlank(),
                 new Constraints\Range(['min' => 4, 'max' => 10]),
             ],
-            'ezforms' => [
+            'ibexa_forms' => [
                 'description' => null,
                 'language_code' => 'eng-GB',
                 'fielddefinition' => $fieldDefinition,

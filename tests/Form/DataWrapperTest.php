@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form;
 
-use Netgen\Bundle\EzFormsBundle\Form\DataWrapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 

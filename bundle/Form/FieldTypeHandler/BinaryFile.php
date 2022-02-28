@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 
 use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Core\FieldType\BinaryFile\Value as FileValue;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints;
@@ -57,7 +57,7 @@ final class BinaryFile extends FieldTypeHandler
         // File should not be erased (updated as empty) if nothing is selected in file input
         $this->skipEmptyUpdate($formBuilder, $fieldDefinition->identifier);
         // Used with update for displaying current file
-        $options['block_name'] = 'ezforms_binary_file';
+        $options['block_name'] = 'ibexa_forms_binary_file';
 
         $formBuilder->add($fieldDefinition->identifier, FileType::class, $options);
     }

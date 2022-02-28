@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Controller;
+namespace Netgen\Bundle\IbexaFormsBundle\Controller;
 
 use Exception;
 use Ibexa\Bundle\Core\Controller;
 use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
 use Ibexa\Core\MVC\Symfony\Routing\UrlAliasRouter;
-use Netgen\Bundle\EzFormsBundle\Form\DataWrapper;
-use Netgen\Bundle\EzFormsBundle\Form\Payload\InformationCollectionStruct;
-use Netgen\Bundle\EzFormsBundle\Form\Type\CreateContentType;
-use Netgen\Bundle\EzFormsBundle\Form\Type\CreateUserType;
-use Netgen\Bundle\EzFormsBundle\Form\Type\InformationCollectionType;
-use Netgen\Bundle\EzFormsBundle\Form\Type\UpdateContentType;
-use Netgen\Bundle\EzFormsBundle\Form\Type\UpdateUserType;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\Payload\InformationCollectionStruct;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\CreateContentType;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\CreateUserType;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\InformationCollectionType;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\UpdateContentType;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\UpdateUserType;
 use RuntimeException;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormError;
@@ -40,7 +40,7 @@ final class DemoController extends Controller
         // No method to create named builder in framework controller
         /** @var \Symfony\Component\Form\FormBuilderInterface $formBuilder */
         $formBuilder = $this->container->get('form.factory')->createBuilder(CreateContentType::class, $data);
-        // Adding controls as EzFormsBundle does not do that by itself
+        // Adding controls as Ibexa Forms Bundle does not do that by itself
         $formBuilder->add('save', SubmitType::class, ['label' => 'Publish']);
 
         $form = $formBuilder->getForm();
@@ -81,7 +81,7 @@ final class DemoController extends Controller
         }
 
         return $this->render(
-            '@NetgenEzForms/demo_form.html.twig',
+            '@NetgenIbexaForms/demo_form.html.twig',
             [
                 'form' => $form->createView(),
             ]
@@ -105,7 +105,7 @@ final class DemoController extends Controller
         // No method to create named builder in framework controller
         /** @var \Symfony\Component\Form\FormBuilderInterface $formBuilder */
         $formBuilder = $this->container->get('form.factory')->createBuilder(UpdateContentType::class, $data);
-        // Adding controls as EzFormsBundle does not do that by itself
+        // Adding controls as Ibexa Forms Bundle does not do that by itself
         $formBuilder->add('save', SubmitType::class, ['label' => 'Update']);
 
         $form = $formBuilder->getForm();
@@ -143,7 +143,7 @@ final class DemoController extends Controller
         }
 
         return $this->render(
-            '@NetgenEzForms/demo_form.html.twig',
+            '@NetgenIbexaForms/demo_form.html.twig',
             [
                 'form' => $form->createView(),
             ]
@@ -176,7 +176,7 @@ final class DemoController extends Controller
         // No method to create named builder in framework controller
         /** @var \Symfony\Component\Form\FormBuilderInterface $formBuilder */
         $formBuilder = $this->container->get('form.factory')->createBuilder(CreateUserType::class, $data);
-        // Adding controls as EzFormsBundle does not do that by itself
+        // Adding controls as Ibexa Forms Bundle does not do that by itself
         $formBuilder->add('save', SubmitType::class, ['label' => 'Publish']);
 
         $form = $formBuilder->getForm();
@@ -233,7 +233,7 @@ final class DemoController extends Controller
         }
 
         return $this->render(
-            '@NetgenEzForms/demo_form.html.twig',
+            '@NetgenIbexaForms/demo_form.html.twig',
             [
                 'form' => $form->createView(),
             ]
@@ -264,7 +264,7 @@ final class DemoController extends Controller
         // No method to create named builder in framework controller
         /** @var \Symfony\Component\Form\FormBuilderInterface $formBuilder */
         $formBuilder = $this->container->get('form.factory')->createBuilder(UpdateUserType::class, $data);
-        // Adding controls as EzFormsBundle does not do that by itself
+        // Adding controls as Ibexa Forms Bundle does not do that by itself
         $formBuilder->add('save', SubmitType::class, ['label' => 'Update']);
 
         $form = $formBuilder->getForm();
@@ -286,7 +286,7 @@ final class DemoController extends Controller
         }
 
         return $this->render(
-            '@NetgenEzForms/demo_form.html.twig',
+            '@NetgenIbexaForms/demo_form.html.twig',
             [
                 'form' => $form->createView(),
             ]
@@ -313,7 +313,7 @@ final class DemoController extends Controller
         // No method to create named builder in framework controller
         /** @var \Symfony\Component\Form\FormBuilderInterface $formBuilder */
         $formBuilder = $this->container->get('form.factory')->createBuilder(InformationCollectionType::class, $data);
-        // Adding controls as EzFormsBundle does not do that by itself
+        // Adding controls as Ibexa Forms Bundle does not do that by itself
         $formBuilder->add('save', SubmitType::class, ['label' => 'Publish']);
 
         $form = $formBuilder->getForm();
@@ -328,7 +328,7 @@ final class DemoController extends Controller
         }
 
         return $this->render(
-            '@NetgenEzForms/demo_form.html.twig',
+            '@NetgenIbexaForms/demo_form.html.twig',
             [
                 'form' => $form->createView(),
             ]

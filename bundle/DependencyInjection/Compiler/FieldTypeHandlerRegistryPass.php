@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\DependencyInjection\Compiler;
+namespace Netgen\Bundle\IbexaFormsBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -13,17 +13,17 @@ final class FieldTypeHandlerRegistryPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
-        if (!$container->hasDefinition('netgen.ezforms.form.fieldtype_handler_registry')) {
+        if (!$container->hasDefinition('netgen.ibexa_forms.form.fieldtype_handler_registry')) {
             return;
         }
 
-        $registry = $container->getDefinition('netgen.ezforms.form.fieldtype_handler_registry');
+        $registry = $container->getDefinition('netgen.ibexa_forms.form.fieldtype_handler_registry');
 
-        foreach ($container->findTaggedServiceIds('netgen.ezforms.form.fieldtype_handler') as $id => $attributes) {
+        foreach ($container->findTaggedServiceIds('netgen.ibexa_forms.form.fieldtype_handler') as $id => $attributes) {
             foreach ($attributes as $attribute) {
                 if (!isset($attribute['alias'])) {
                     throw new LogicException(
-                        "'netgen.ezforms.form.fieldtype_handler' service tag " .
+                        "'netgen.ibexa_forms.form.fieldtype_handler' service tag " .
                         "needs an 'alias' attribute to identify the field type. None given."
                     );
                 }

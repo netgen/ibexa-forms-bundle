@@ -4,8 +4,8 @@
     <tr>
         <td>
             {{- form_label(form) -}}
-            {% if form.vars.ezforms.description is defined %}
-                <p>{{ form.vars.ezforms.description }}</p>
+            {% if form.vars.ibexa_forms.description is defined %}
+                <p>{{ form.vars.ibexa_forms.description }}</p>
             {% endif %}
         </td>
         <td>
@@ -15,49 +15,49 @@
     </tr>
 {% endblock form_row %}
 
-{% block __ezforms_update_image_widget %}
+{% block __ibexa_forms_update_image_widget %}
     {% apply spaceless %}
         {{ ibexa_render_field(
-            form.vars.ezforms.content,
-            form.vars.ezforms.fielddefinition.identifier,
+            form.vars.ibexa_forms.content,
+            form.vars.ibexa_forms.fielddefinition.identifier,
             { 'parameters': {'alias': 'articlethumbnail'} }
         ) }}
         {{ block('form_widget_simple') }}
     {% endapply %}
-{% endblock __ezforms_update_image_widget %}
+{% endblock __ibexa_forms_update_image_widget %}
 
-{% block _ezforms_update_content_ezforms_image_widget %}
+{% block _ibexa_forms_update_content_ibexa_forms_image_widget %}
     {% apply spaceless %}
-        {{ block('__ezforms_update_image_widget') }}
+        {{ block('__ibexa_forms_update_image_widget') }}
     {% endapply %}
-{% endblock _ezforms_update_content_ezforms_image_widget %}
+{% endblock _ibexa_forms_update_content_ibexa_forms_image_widget %}
 
-{% block _ezforms_update_user_ezforms_image_widget %}
+{% block _ibexa_forms_update_user_ibexa_forms_image_widget %}
     {% apply spaceless %}
-        {{ block('__ezforms_update_image_widget') }}
+        {{ block('__ibexa_forms_update_image_widget') }}
     {% endapply %}
-{% endblock _ezforms_update_user_ezforms_image_widget %}
+{% endblock _ibexa_forms_update_user_ibexa_forms_image_widget %}
 
 {# BinaryFile update field custom rendering #}
-{% block __ezforms_update_file_widget %}
+{% block __ibexa_forms_update_file_widget %}
     {% apply spaceless %}
         {{ ibexa_render_field(
-            form.vars.ezforms.content,
-            form.vars.ezforms.fielddefinition.identifier
+            form.vars.ibexa_forms.content,
+            form.vars.ibexa_forms.fielddefinition.identifier
         ) }}
         {{ block('form_widget_simple') }}
     {% endapply %}
-{% endblock __ezforms_update_file_widget %}
+{% endblock __ibexa_forms_update_file_widget %}
 
-{% block _ezforms_update_content_ezforms_binary_file_widget %}
+{% block _ibexa_forms_update_content_ibexa_forms_binary_file_widget %}
     {% apply spaceless %}
-        {{ block('__ezforms_update_file_widget') }}
+        {{ block('__ibexa_forms_update_file_widget') }}
     {% endapply %}
-{% endblock _ezforms_update_content_ezforms_binary_file_widget %}
+{% endblock _ibexa_forms_update_content_ibexa_forms_binary_file_widget %}
 {# END of BinaryFile update field custom rendering #}
 
 {# MapLocation fieldtype handler #}
-{% block __ezforms_map_location_widget %}
+{% block __ibexa_forms_map_location_widget %}
     {% apply spaceless %}
         <div id="{{ id ~ '_map' }}" style="margin: 0; padding: 0; height: 400px; width: 600px;">
 
@@ -72,8 +72,8 @@
         {% endif %}
         <input type="hidden" id="{{ id }}_address_hidden" value="{{ address_hidden_value }}">
 
-        <button type="button" id="{{ id }}_find_address">{{ 'ezforms.form.map.find_address.label'|trans }}</button>
-        <button type="button" id="{{ id }}_restore_coordinates" disabled>{{ 'ezforms.form.map.restore_coordinates.label'|trans }}</button>
+        <button type="button" id="{{ id }}_find_address">{{ 'ibexa_forms.form.map.find_address.label'|trans }}</button>
+        <button type="button" id="{{ id }}_restore_coordinates" disabled>{{ 'ibexa_forms.form.map.restore_coordinates.label'|trans }}</button>
 
         {{ form_row(form.latitude) }}
 
@@ -93,12 +93,12 @@
         {% endif %}
         <input type="hidden" id="{{ id }}_longitude_hidden" value="{{ longitude_hidden_value }}">
 
-        <button type="button" id="{{ id }}_current_location">{{ 'ezforms.form.map.current_location.label'|trans }}</button>
+        <button type="button" id="{{ id }}_current_location">{{ 'ibexa_forms.form.map.current_location.label'|trans }}</button>
 
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
         <script type="text/javascript">
 
-            function EzFormsMapLocationFieldType() {
+            function IbexaFormsMapLocationFieldType() {
                 var formId = '{{ id }}';
                 var mapId = formId + '_map';
                 var addressId = formId + '_address';
@@ -230,24 +230,24 @@
         <script type="text/javascript">
 
             if (window.addEventListener) {
-                window.addEventListener('load', function(){ EzFormsMapLocationFieldType() }, false);
+                window.addEventListener('load', function(){ IbexaFormsMapLocationFieldType() }, false);
             } else if (window.attachEvent) {
-                window.attachEvent('onload', function(){ EzFormsMapLocationFieldType() } );
+                window.attachEvent('onload', function(){ IbexaFormsMapLocationFieldType() } );
             }
 
         </script>
     {% endapply %}
-{% endblock __ezforms_map_location_widget %}
+{% endblock __ibexa_forms_map_location_widget %}
 
-{% block _ezforms_create_content_ezforms_map_widget %}
+{% block _ibexa_forms_create_content_ibexa_forms_map_widget %}
     {% apply spaceless %}
-        {{ block('__ezforms_map_location_widget') }}
+        {{ block('__ibexa_forms_map_location_widget') }}
     {% endapply %}
-{% endblock _ezforms_create_content_ezforms_map_widget %}
+{% endblock _ibexa_forms_create_content_ibexa_forms_map_widget %}
 
-{% block _ezforms_update_content_ezforms_map_widget %}
+{% block _ibexa_forms_update_content_ibexa_forms_map_widget %}
     {% apply spaceless %}
-        {{ block('__ezforms_map_location_widget') }}
+        {{ block('__ibexa_forms_map_location_widget') }}
     {% endapply %}
-{% endblock _ezforms_update_content_ezforms_map_widget %}
+{% endblock _ibexa_forms_update_content_ibexa_forms_map_widget %}
 {# END of MapLocation fieldtype handler #}

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\DataMapper;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\DataMapper;
 
-use Netgen\Bundle\EzFormsBundle\Form\DataMapper;
-use Netgen\Bundle\EzFormsBundle\Form\DataWrapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataMapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper;
 use RuntimeException;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\PropertyAccess\PropertyPathInterface;

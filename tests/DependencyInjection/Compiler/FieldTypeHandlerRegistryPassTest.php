@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\DependencyInjection\Compiler;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\DependencyInjection\Compiler;
 
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractCompilerPassTestCase;
-use Netgen\Bundle\EzFormsBundle\DependencyInjection\Compiler\FieldTypeHandlerRegistryPass;
+use Netgen\Bundle\IbexaFormsBundle\DependencyInjection\Compiler\FieldTypeHandlerRegistryPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Exception\LogicException;
@@ -16,20 +16,20 @@ final class FieldTypeHandlerRegistryPassTest extends AbstractCompilerPassTestCas
     public function testCompilerPassCollectsValidServices(): void
     {
         $registry = new Definition();
-        $this->setDefinition('netgen.ezforms.form.fieldtype_handler_registry', $registry);
+        $this->setDefinition('netgen.ibexa_forms.form.fieldtype_handler_registry', $registry);
 
         $handler = new Definition();
-        $handler->addTag('netgen.ezforms.form.fieldtype_handler', ['alias' => 'eztext']);
-        $this->setDefinition('netgen.ezforms.form.fieldtype_handler.eztext', $handler);
+        $handler->addTag('netgen.ibexa_forms.form.fieldtype_handler', ['alias' => 'eztext']);
+        $this->setDefinition('netgen.ibexa_forms.form.fieldtype_handler.eztext', $handler);
 
         $this->compile();
 
         $this->assertContainerBuilderHasServiceDefinitionWithMethodCall(
-            'netgen.ezforms.form.fieldtype_handler_registry',
+            'netgen.ibexa_forms.form.fieldtype_handler_registry',
             'register',
             [
                 'eztext',
-                new Reference('netgen.ezforms.form.fieldtype_handler.eztext'),
+                new Reference('netgen.ibexa_forms.form.fieldtype_handler.eztext'),
             ]
         );
     }
@@ -37,22 +37,22 @@ final class FieldTypeHandlerRegistryPassTest extends AbstractCompilerPassTestCas
     public function testCompilerPassMustThrowExceptionIfHandlerServiceDoesNotHaveAlias(): void
     {
         $this->expectException(LogicException::class);
-        $this->expectExceptionMessage("'netgen.ezforms.form.fieldtype_handler' service tag needs an 'alias' attribute to identify the field type. None given.");
+        $this->expectExceptionMessage("'netgen.ibexa_forms.form.fieldtype_handler' service tag needs an 'alias' attribute to identify the field type. None given.");
 
         $registry = new Definition();
-        $this->setDefinition('netgen.ezforms.form.fieldtype_handler_registry', $registry);
+        $this->setDefinition('netgen.ibexa_forms.form.fieldtype_handler_registry', $registry);
 
         $handler = new Definition();
-        $handler->addTag('netgen.ezforms.form.fieldtype_handler');
-        $this->setDefinition('netgen.ezforms.form.fieldtype_handler.eztext', $handler);
+        $handler->addTag('netgen.ibexa_forms.form.fieldtype_handler');
+        $this->setDefinition('netgen.ibexa_forms.form.fieldtype_handler.eztext', $handler);
 
         $this->compile();
 
         $this->assertContainerBuilderHasServiceDefinitionWithMethodCall(
-            'netgen.ezforms.form.fieldtype_handler_registry',
+            'netgen.ibexa_forms.form.fieldtype_handler_registry',
             'register',
             [
-                new Reference('netgen.ezforms.form.fieldtype_handler.eztext'),
+                new Reference('netgen.ibexa_forms.form.fieldtype_handler.eztext'),
             ]
         );
     }

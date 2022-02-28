@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\Type;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\Type;
 
 use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface;
-use Netgen\Bundle\EzFormsBundle\Form\DataWrapper;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry;
-use Netgen\Bundle\EzFormsBundle\Form\Payload\InformationCollectionStruct;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry;
+use Netgen\Bundle\IbexaFormsBundle\Form\Payload\InformationCollectionStruct;
 use RuntimeException;
 use Symfony\Component\Form\DataMapperInterface;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -34,7 +34,7 @@ final class InformationCollectionType extends AbstractContentType
 
     public function getBlockPrefix(): string
     {
-        return 'ezforms_information_collection';
+        return 'ibexa_forms_information_collection';
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -44,7 +44,7 @@ final class InformationCollectionType extends AbstractContentType
 
         if (!$dataWrapper instanceof DataWrapper) {
             throw new RuntimeException(
-                'Data must be an instance of Netgen\\EzFormsBundle\\Form\\DataWrapper'
+                'Data must be an instance of Netgen\\IbexaFormsBundle\\Form\\DataWrapper'
             );
         }
 
@@ -53,7 +53,7 @@ final class InformationCollectionType extends AbstractContentType
 
         if (!$payload instanceof InformationCollectionStruct) {
             throw new RuntimeException(
-                'Data payload must be an instance of Netgen\\Bundle\\EzFormsBundle\\Form\\Payload\\InformationCollectionStruct'
+                'Data payload must be an instance of Netgen\\Bundle\\IbexaFormsBundle\\Form\\Payload\\InformationCollectionStruct'
             );
         }
 

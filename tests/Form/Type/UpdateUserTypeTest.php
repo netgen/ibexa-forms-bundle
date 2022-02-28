@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\Type;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\Type;
 
 use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
 use Ibexa\Contracts\Core\Repository\Values\User\UserUpdateStruct;
@@ -13,10 +13,10 @@ use Ibexa\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
 use Ibexa\Core\Repository\Values\User\User;
-use Netgen\Bundle\EzFormsBundle\Form\DataWrapper;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry;
-use Netgen\Bundle\EzFormsBundle\Form\Type\UpdateUserType;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\UpdateUserType;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use Symfony\Component\Form\AbstractType;
@@ -38,7 +38,7 @@ final class UpdateUserTypeTest extends TestCase
     public function testBuildFormWithoutDataWrapperMustThrowException(): void
     {
         $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage('Data must be an instance of Netgen\EzFormsBundle\Form\DataWrapper');
+        $this->expectExceptionMessage('Data must be an instance of Netgen\IbexaFormsBundle\Form\DataWrapper');
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\Type;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\Type;
 
-use Netgen\Bundle\EzFormsBundle\Form\Type\UrlType;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\UrlType;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;

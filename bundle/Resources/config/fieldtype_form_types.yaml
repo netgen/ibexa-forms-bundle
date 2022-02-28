@@ -1,10 +1,10 @@
 services:
-    netgen.ezforms.form.type.fieldtype.ezuser_create:
-        class: Netgen\Bundle\EzFormsBundle\Form\Type\FieldType\UserCreateType
+    netgen.ibexa_forms.form.type.fieldtype.ezuser_create:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\Type\FieldType\UserCreateType
         tags:
-            - { name: form.type, alias: ezforms_ezuser_create }
+            - { name: form.type, alias: ibexa_forms_ezuser_create }
 
-    netgen.ezforms.form.type.fieldtype.ezuser_update:
-        class: Netgen\Bundle\EzFormsBundle\Form\Type\FieldType\UserUpdateType
+    netgen.ibexa_forms.form.type.fieldtype.ezuser_update:
+        class: Netgen\Bundle\IbexaFormsBundle\Form\Type\FieldType\UserUpdateType
         tags:
-            - { name: form.type, alias: ezforms_ezuser_update }
+            - { name: form.type, alias: ibexa_forms_ezuser_update }

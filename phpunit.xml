@@ -12,7 +12,7 @@
          beStrictAboutTestsThatDoNotTestAnything="false"
 >
     <testsuites>
-        <testsuite name="Netgen\EzFormsBundle\Tests">
+        <testsuite name="Netgen\IbexaFormsBundle\Tests">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
@@ -22,7 +22,7 @@
             <exclude>
                 <directory>bundle/Controller</directory>
                 <directory>bundle/Resources</directory>
-                <file>bundle/NetgenEzFormsBundle.php</file>
+                <file>bundle/NetgenIbexaFormsBundle.php</file>
             </exclude>
         </whitelist>
     </filter>

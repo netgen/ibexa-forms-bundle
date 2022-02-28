@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form;
+namespace Netgen\Bundle\IbexaFormsBundle\Form;
 
 final class DataWrapper
 {

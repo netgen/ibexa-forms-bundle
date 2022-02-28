@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\Type;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -27,6 +27,6 @@ final class UrlType extends AbstractType
 
     public function getBlockPrefix(): string
     {
-        return 'ezforms_url';
+        return 'ibexa_forms_url';
     }
 }

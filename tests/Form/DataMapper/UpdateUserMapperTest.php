@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\DataMapper;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\DataMapper;
 
 use Ibexa\Contracts\Core\Repository\Values\User\UserUpdateStruct;
 use Ibexa\Core\FieldType\TextLine\Value as TextLineValue;
@@ -12,10 +12,10 @@ use Ibexa\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
 use Ibexa\Core\Repository\Values\User\User;
-use Netgen\Bundle\EzFormsBundle\Form\DataMapper;
-use Netgen\Bundle\EzFormsBundle\Form\DataMapper\UpdateUserMapper;
-use Netgen\Bundle\EzFormsBundle\Form\DataWrapper;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataMapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataMapper\UpdateUserMapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
@@ -31,7 +31,7 @@ final class UpdateUserMapperTest extends TestCase
     private $mapper;
 
     /**
-     * @var \Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry
+     * @var \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry
      */
     private $registry;
 
@@ -51,7 +51,7 @@ final class UpdateUserMapperTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->handler = $this->getMockBuilder('Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerInterface')
+        $this->handler = $this->getMockBuilder('Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerInterface')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -144,7 +144,7 @@ final class UpdateUserMapperTest extends TestCase
         $this->mapper->mapDataToForms($data, [$form]);
     }
 
-    public function testMapDataToFormsWithFieldTypeIdentifierEzUser(): void
+    public function testMapDataToFormsWithFieldTypeIdentifierIbexaUser(): void
     {
         $contentType = new ContentType(
             [
@@ -364,7 +364,7 @@ final class UpdateUserMapperTest extends TestCase
         $this->mapper->mapFormsToData([$form], $data);
     }
 
-    public function testMapFormsToDataWithFieldTypeIdentifierEzUser(): void
+    public function testMapFormsToDataWithFieldTypeIdentifierIbexaUser(): void
     {
         $contentType = new ContentType(
             [
@@ -526,7 +526,7 @@ final class UpdateUserMapperTest extends TestCase
         $this->mapper->mapFormsToData([$form], $data);
     }
 
-    public function testMapFormsToDataWithFieldTypeIdentifierEzUserAndShouldSkipReturnsTrue(): void
+    public function testMapFormsToDataWithFieldTypeIdentifierIbexaUserAndShouldSkipReturnsTrue(): void
     {
         $contentType = new ContentType(
             [

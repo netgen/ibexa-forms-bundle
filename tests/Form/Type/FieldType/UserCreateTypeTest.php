@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\Type\FieldType;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\Type\FieldType;
 
-use Netgen\Bundle\EzFormsBundle\Form\Type\FieldType\UserCreateType;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\FieldType\UserCreateType;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;

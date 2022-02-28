@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\Type;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\Type;
 
 use Ibexa\Contracts\Core\Repository\Values\User\UserCreateStruct;
-use Netgen\Bundle\EzFormsBundle\Form\DataWrapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper;
 use RuntimeException;
 use Symfony\Component\Form\FormBuilderInterface;
 
@@ -13,17 +13,17 @@ final class CreateUserType extends AbstractContentType
 {
     public function getBlockPrefix(): string
     {
-        return 'ezforms_create_user';
+        return 'ibexa_forms_create_user';
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        /** @var \Netgen\Bundle\EzFormsBundle\Form\DataWrapper $dataWrapper */
+        /** @var \Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper $dataWrapper */
         $dataWrapper = $options['data'];
 
         if (!$dataWrapper instanceof DataWrapper) {
             throw new RuntimeException(
-                'Data must be an instance of Netgen\\EzFormsBundle\\Form\\DataWrapper'
+                'Data must be an instance of Netgen\\IbexaFormsBundle\\Form\\DataWrapper'
             );
         }
 

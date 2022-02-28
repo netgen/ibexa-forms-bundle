@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\Mock;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\Mock;
 
 final class FileMock
 {

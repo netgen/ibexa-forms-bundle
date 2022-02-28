@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\DataMapper;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\DataMapper;
 
 use DateTime;
 use Ibexa\Core\FieldType\TextLine\Value;
@@ -11,9 +11,9 @@ use Ibexa\Core\Repository\Values\Content\ContentCreateStruct;
 use Ibexa\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
-use Netgen\Bundle\EzFormsBundle\Form\DataMapper\CreateContentMapper;
-use Netgen\Bundle\EzFormsBundle\Form\DataWrapper;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataMapper\CreateContentMapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
@@ -35,7 +35,7 @@ final class CreateContentMapperTest extends TestCase
     private $dispatcher;
 
     /**
-     * @var \Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry
+     * @var \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry
      */
     private $registry;
 
@@ -59,7 +59,7 @@ final class CreateContentMapperTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->handler = $this->getMockBuilder('Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerInterface')
+        $this->handler = $this->getMockBuilder('Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerInterface')
             ->disableOriginalConstructor()
             ->getMock();
 

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\FieldTypeHandler;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\FieldTypeHandler;
 
 use Ibexa\Core\FieldType\Float\Value as FloatValue;
 use Ibexa\Core\Helper\FieldHelper;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler\FloatHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler\FloatHandler;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilder;
@@ -116,7 +116,7 @@ final class FloatHandlerTest extends TestCase
                 new Constraints\NotBlank(),
                 new Constraints\Range(['min' => 4, 'max' => 10]),
             ],
-            'ezforms' => [
+            'ibexa_forms' => [
                 'description' => null,
                 'language_code' => 'eng-GB',
                 'fielddefinition' => $fieldDefinition,
@@ -146,7 +146,7 @@ final class FloatHandlerTest extends TestCase
                 new Constraints\NotBlank(),
                 new Constraints\Range(['min' => 4, 'max' => 10]),
             ],
-            'ezforms' => [
+            'ibexa_forms' => [
                 'description' => null,
                 'language_code' => 'eng-GB',
                 'fielddefinition' => $fieldDefinition,
@@ -176,7 +176,7 @@ final class FloatHandlerTest extends TestCase
                 new Constraints\NotBlank(),
                 new Constraints\Range(['min' => 4, 'max' => 10]),
             ],
-            'ezforms' => [
+            'ibexa_forms' => [
                 'description' => null,
                 'language_code' => 'eng-GB',
                 'fielddefinition' => $fieldDefinition,

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Form\Type;
+namespace Netgen\Bundle\IbexaFormsBundle\Form\Type;
 
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\DataMapperInterface;
 
 abstract class AbstractContentType extends AbstractType
 {
     /**
-     * @var \Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry
+     * @var \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry
      */
     protected $fieldTypeHandlerRegistry;
 

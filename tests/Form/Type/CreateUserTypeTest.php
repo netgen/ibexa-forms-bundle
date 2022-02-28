@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Netgen\Bundle\EzFormsBundle\Tests\Form\Type;
+namespace Netgen\Bundle\IbexaFormsBundle\Tests\Form\Type;
 
 use Ibexa\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
 use Ibexa\Core\Repository\Values\User\UserCreateStruct;
-use Netgen\Bundle\EzFormsBundle\Form\DataWrapper;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandler;
-use Netgen\Bundle\EzFormsBundle\Form\FieldTypeHandlerRegistry;
-use Netgen\Bundle\EzFormsBundle\Form\Type\CreateUserType;
+use Netgen\Bundle\IbexaFormsBundle\Form\DataWrapper;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
+use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry;
+use Netgen\Bundle\IbexaFormsBundle\Form\Type\CreateUserType;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use Symfony\Component\Form\AbstractType;
@@ -33,7 +33,7 @@ final class CreateUserTypeTest extends TestCase
     public function testBuildFormWithoutDataWrapperMustThrowException(): void
     {
         $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage('Data must be an instance of Netgen\EzFormsBundle\Form\DataWrapper');
+        $this->expectExceptionMessage('Data must be an instance of Netgen\IbexaFormsBundle\Form\DataWrapper');
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
