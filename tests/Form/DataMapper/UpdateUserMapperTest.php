@@ -27,7 +27,7 @@ final class UpdateUserMapperTest extends TestCase
 {
     private UpdateUserMapper $mapper;
 
-    private MockObject $registry;
+    private FieldTypeHandlerRegistry $registry;
 
     private MockObject $handler;
 
