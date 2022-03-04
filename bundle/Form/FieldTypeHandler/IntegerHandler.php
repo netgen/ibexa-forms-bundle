@@ -17,10 +17,7 @@ use function is_int;
 
 final class IntegerHandler extends FieldTypeHandler
 {
-    /**
-     * @var \Ibexa\Core\Helper\FieldHelper
-     */
-    protected $fieldHelper;
+    protected FieldHelper $fieldHelper;
 
     public function __construct(FieldHelper $fieldHelper)
     {

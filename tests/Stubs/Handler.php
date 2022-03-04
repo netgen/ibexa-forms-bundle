@@ -10,6 +10,9 @@ use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 
 final class Handler extends FieldTypeHandler
 {
+    /**
+     * @return mixed
+     */
     public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null)
     {
     }

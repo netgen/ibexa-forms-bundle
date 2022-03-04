@@ -60,9 +60,7 @@ final class FieldTypeHandlerRegistryTest extends TestCase
     {
         $handlerData = new Handler();
 
-        $handler = static function () use ($handlerData) {
-            return $handlerData;
-        };
+        $handler = static fn () => $handlerData;
 
         $registry = new FieldTypeHandlerRegistry(['some_handler' => $handler]);
 

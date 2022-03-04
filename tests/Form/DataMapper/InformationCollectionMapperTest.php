@@ -18,25 +18,13 @@ use RuntimeException;
 
 final class InformationCollectionMapperTest extends TestCase
 {
-    /**
-     * @var InformationCollectionMapper
-     */
-    private $mapper;
+    private InformationCollectionMapper $mapper;
 
-    /**
-     * @var \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry
-     */
-    private $registry;
+    private FieldTypeHandlerRegistry $registry;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    private $handler;
+    private MockObject $handler;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    private $propertyAccessor;
+    private MockObject $propertyAccessor;
 
     protected function setUp(): void
     {

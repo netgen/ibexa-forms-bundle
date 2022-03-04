@@ -23,10 +23,7 @@ final class RelationList extends FieldTypeHandler
     public const TPLBASED_MULTI = 5;
     public const TPLBASED_SINGLE = 6;
 
-    /**
-     * @var \Ibexa\Contracts\Core\Repository\Repository
-     */
-    private $repository;
+    private Repository $repository;
 
     public function __construct(Repository $repository)
     {

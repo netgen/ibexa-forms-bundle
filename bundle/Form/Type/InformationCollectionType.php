@@ -17,10 +17,7 @@ use function in_array;
 
 final class InformationCollectionType extends AbstractContentType
 {
-    /**
-     * @var \Ibexa\Contracts\Core\SiteAccess\ConfigResolverInterface
-     */
-    protected $configResolver;
+    protected ConfigResolverInterface $configResolver;
 
     public function __construct(
         FieldTypeHandlerRegistry $fieldTypeHandlerRegistry,

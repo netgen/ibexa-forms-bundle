@@ -16,10 +16,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 final class Relation extends FieldTypeHandler
 {
-    /**
-     * @var \Ibexa\Contracts\Core\Repository\Repository
-     */
-    private $repository;
+    private Repository $repository;
 
     public function __construct(Repository $repository)
     {

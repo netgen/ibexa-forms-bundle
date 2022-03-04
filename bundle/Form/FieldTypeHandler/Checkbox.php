@@ -15,10 +15,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 final class Checkbox extends FieldTypeHandler
 {
-    /**
-     * @var \Ibexa\Core\Helper\FieldHelper
-     */
-    protected $fieldHelper;
+    protected FieldHelper $fieldHelper;
 
     public function __construct(FieldHelper $fieldHelper)
     {

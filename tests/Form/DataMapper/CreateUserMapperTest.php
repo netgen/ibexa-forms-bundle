@@ -21,25 +21,13 @@ use Symfony\Component\PropertyAccess\PropertyPathInterface;
 
 final class CreateUserMapperTest extends TestCase
 {
-    /**
-     * @var CreateUserMapper
-     */
-    private $mapper;
+    private CreateUserMapper $mapper;
 
-    /**
-     * @var \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry
-     */
-    private $registry;
+    private FieldTypeHandlerRegistry $registry;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    private $handler;
+    private MockObject $handler;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    private $propertyAccessor;
+    private MockObject $propertyAccessor;
 
     protected function setUp(): void
     {

@@ -10,15 +10,9 @@ use Symfony\Component\Form\DataMapperInterface;
 
 abstract class AbstractContentType extends AbstractType
 {
-    /**
-     * @var \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry
-     */
-    protected $fieldTypeHandlerRegistry;
+    protected FieldTypeHandlerRegistry $fieldTypeHandlerRegistry;
 
-    /**
-     * @var \Symfony\Component\Form\DataMapperInterface
-     */
-    protected $dataMapper;
+    protected DataMapperInterface $dataMapper;
 
     public function __construct(FieldTypeHandlerRegistry $fieldTypeHandlerRegistry, DataMapperInterface $dataMapper)
     {

@@ -24,30 +24,15 @@ use Symfony\Component\PropertyAccess\PropertyPathInterface;
 
 final class CreateContentMapperTest extends TestCase
 {
-    /**
-     * @var CreateContentMapper
-     */
-    private $mapper;
+    private CreateContentMapper $mapper;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    private $dispatcher;
+    private MockObject $dispatcher;
 
-    /**
-     * @var \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry
-     */
-    private $registry;
+    private FieldTypeHandlerRegistry $registry;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    private $handler;
+    private MockObject $handler;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    private $propertyAccessor;
+    private MockObject $propertyAccessor;
 
     protected function setUp(): void
     {

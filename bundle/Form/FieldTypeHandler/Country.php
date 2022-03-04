@@ -21,17 +21,13 @@ final class Country extends FieldTypeHandler
 {
     /**
      * Country codes.
-     *
-     * @var array
      */
-    protected $countryData;
+    protected array $countryData;
 
     /**
      * Removed redundant data from array.
-     *
-     * @var array
      */
-    protected $filteredCountryData;
+    protected array $filteredCountryData;
 
     public function __construct(array $countryData)
     {
@@ -42,9 +38,6 @@ final class Country extends FieldTypeHandler
         }
     }
 
-    /**
-     * @return array|string
-     */
     public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null)
     {
         $isMultiple = true;

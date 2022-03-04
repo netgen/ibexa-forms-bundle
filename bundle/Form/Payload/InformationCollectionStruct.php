@@ -9,12 +9,10 @@ final class InformationCollectionStruct
     /**
      * @var mixed[] An array of field values like[$fieldDefIdentifier]
      */
-    private $collectedData;
+    private array $collectedData = [];
 
     /**
      * Returns value for $fieldDefIdentifier.
-     *
-     * @param string $fieldDefIdentifier
      *
      * @return mixed
      */
@@ -34,7 +32,6 @@ final class InformationCollectionStruct
     /**
      * Sets value for $fieldDefIdentifier.
      *
-     * @param string $fieldDefIdentifier
      * @param mixed $value
      */
     public function setCollectedFieldValue(string $fieldDefIdentifier, $value): void

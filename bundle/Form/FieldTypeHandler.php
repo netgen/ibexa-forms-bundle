@@ -14,8 +14,6 @@ use Symfony\Component\Validator\Constraints;
 
 abstract class FieldTypeHandler implements FieldTypeHandlerInterface
 {
-    protected $fieldTypeRegistry;
-
     abstract public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null);
 
     public function convertFieldValueFromForm($data)

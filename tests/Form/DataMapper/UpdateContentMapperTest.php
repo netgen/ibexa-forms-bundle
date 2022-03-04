@@ -22,25 +22,13 @@ use Symfony\Component\PropertyAccess\PropertyPathInterface;
 
 final class UpdateContentMapperTest extends TestCase
 {
-    /**
-     * @var UpdateContentMapper
-     */
-    private $mapper;
+    private UpdateContentMapper $mapper;
 
-    /**
-     * @var \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry
-     */
-    private $registry;
+    private FieldTypeHandlerRegistry $registry;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    private $handler;
+    private MockObject $handler;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    private $propertyAccessor;
+    private MockObject $propertyAccessor;
 
     protected function setUp(): void
     {

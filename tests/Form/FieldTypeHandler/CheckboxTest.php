@@ -9,6 +9,7 @@ use Ibexa\Core\Helper\FieldHelper;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler\Checkbox;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilder;
@@ -16,25 +17,13 @@ use Symfony\Component\Validator\Constraints;
 
 final class CheckboxTest extends TestCase
 {
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    protected $fieldHelper;
+    protected MockObject $fieldHelper;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    protected $formBuilder;
+    protected MockObject $formBuilder;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    protected $content;
+    protected MockObject $content;
 
-    /**
-     * @var array
-     */
-    protected $fieldDefinitionParameters;
+    protected array $fieldDefinitionParameters;
 
     protected function setUp(): void
     {

@@ -17,40 +17,23 @@ use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use InvalidArgumentException;
 use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler\Relation;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormBuilder;
 
 final class RelationTest extends TestCase
 {
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    protected $repository;
+    protected MockObject $repository;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    protected $formBuilder;
+    protected MockObject $formBuilder;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    protected $content;
+    protected MockObject $content;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    protected $locationService;
+    protected MockObject $locationService;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    protected $contentService;
+    protected MockObject $contentService;
 
-    /**
-     * @var array
-     */
-    protected $fieldDefinitionParameters;
+    protected array $fieldDefinitionParameters;
 
     protected function setUp(): void
     {

@@ -13,10 +13,7 @@ use Symfony\Component\Form\FormBuilder;
 
 final class SelectionTest extends TestCase
 {
-    /**
-     * @var Selection
-     */
-    protected $handler;
+    protected Selection $handler;
 
     protected function setUp(): void
     {

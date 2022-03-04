@@ -13,19 +13,14 @@ final class FieldTypeHandlerRegistry
 {
     /**
      * Map of registered callable or FieldTypeHandlerInterface objects.
-     *
-     * @var array
      */
-    private $map;
+    private array $map;
 
     /**
      * Creates a service registry.
      *
      * In $map an array consisting of a mapping of FieldType identifiers to object / callable is expected.
      * In case of callable factory FieldTypeHandlerInterface should be returned on execution.
-     *
-     * @param array $map A map where key is FieldType identifier, and value is a callable factory to get
-     *                   the FieldTypeHandlerInterface object
      */
     public function __construct(array $map = [])
     {
@@ -35,8 +30,7 @@ final class FieldTypeHandlerRegistry
     /**
      * Register a $service for FieldType $identifier.
      *
-     * @param string $identifier FieldType identifier
-     * @param mixed $handler Callable or FieldTypeHandlerInterface instance
+     * @param \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerInterface|callable $handler
      */
     public function register(string $identifier, $handler): void
     {

@@ -19,21 +19,12 @@ use function is_object;
  */
 abstract class DataMapper implements DataMapperInterface
 {
-    /**
-     * @var \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry
-     */
-    protected $fieldTypeHandlerRegistry;
+    protected FieldTypeHandlerRegistry $fieldTypeHandlerRegistry;
 
-    /**
-     * @var \Symfony\Component\PropertyAccess\PropertyAccessorInterface
-     */
-    protected $propertyAccessor;
+    protected PropertyAccessorInterface $propertyAccessor;
 
     /**
      * Creates a new property path mapper.
-     *
-     * @param \Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandlerRegistry $fieldTypeHandlerRegistry
-     * @param \Symfony\Component\PropertyAccess\PropertyAccessorInterface $propertyAccessor
      */
     public function __construct(
         FieldTypeHandlerRegistry $fieldTypeHandlerRegistry,
@@ -145,11 +136,7 @@ abstract class DataMapper implements DataMapperInterface
     /**
      * Returns if the update should be skipped for empty value.
      *
-     * @param \Symfony\Component\Form\FormInterface $form
      * @param mixed $value
-     * @param string $fieldDefinitionIdentifier
-     *
-     * @return bool
      */
     protected function shouldSkipForEmptyUpdate(FormInterface $form, $value, string $fieldDefinitionIdentifier): bool
     {

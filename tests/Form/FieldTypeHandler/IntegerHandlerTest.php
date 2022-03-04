@@ -10,6 +10,7 @@ use Ibexa\Core\Repository\Values\Content\Content;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler\IntegerHandler;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilder;
@@ -17,20 +18,11 @@ use Symfony\Component\Validator\Constraints;
 
 final class IntegerHandlerTest extends TestCase
 {
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    protected $fieldHelper;
+    protected MockObject $fieldHelper;
 
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
-    protected $formBuilder;
+    protected MockObject $formBuilder;
 
-    /**
-     * @var array
-     */
-    protected $fieldDefinitionParameters;
+    protected array $fieldDefinitionParameters;
 
     protected function setUp(): void
     {
