@@ -7,7 +7,7 @@ namespace Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition;
-use Ibexa\Core\FieldType\Float as FloatValue;
+use Ibexa\Core\FieldType\Float\Value as FloatValue;
 use Ibexa\Core\Helper\FieldHelper;
 use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -29,13 +29,13 @@ final class FloatHandler extends FieldTypeHandler
         return $value->value;
     }
 
-    public function convertFieldValueFromForm($data): FloatValue\Value
+    public function convertFieldValueFromForm($data): FloatValue
     {
         if (!is_numeric($data)) {
             $data = null;
         }
 
-        return new FloatValue\Value($data);
+        return new FloatValue($data);
     }
 
     protected function buildFieldForm(
@@ -65,7 +65,7 @@ final class FloatHandler extends FieldTypeHandler
             }
         }
 
-        if (!$content instanceof Content && $fieldDefinition->defaultValue instanceof FloatValue\Value) {
+        if (!$content instanceof Content && $fieldDefinition->defaultValue instanceof FloatValue) {
             $options['data'] = (float) $fieldDefinition->defaultValue->value;
         }
 
