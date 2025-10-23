@@ -15,20 +15,17 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 final class RelationList extends FieldTypeHandler
 {
-    public const BROWSE = 0;
-    public const DROPDOWN = 1;
-    public const LIST_RADIO = 2;
-    public const LIST_CHECK = 3;
-    public const MULTIPLE_SELECTION = 4;
-    public const TPLBASED_MULTI = 5;
-    public const TPLBASED_SINGLE = 6;
+    public const int BROWSE = 0;
+    public const int DROPDOWN = 1;
+    public const int LIST_RADIO = 2;
+    public const int LIST_CHECK = 3;
+    public const int MULTIPLE_SELECTION = 4;
+    public const int TPLBASED_MULTI = 5;
+    public const int TPLBASED_SINGLE = 6;
 
-    private Repository $repository;
-
-    public function __construct(Repository $repository)
-    {
-        $this->repository = $repository;
-    }
+    public function __construct(
+        private Repository $repository,
+    ) {}
 
     public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null): ?array
     {

@@ -23,7 +23,7 @@ final class CreateUserType extends AbstractContentType
 
         if (!$dataWrapper instanceof DataWrapper) {
             throw new RuntimeException(
-                'Data must be an instance of Netgen\\IbexaFormsBundle\\Form\\DataWrapper'
+                'Data must be an instance of Netgen\IbexaFormsBundle\Form\DataWrapper'
             );
         }
 
@@ -31,7 +31,7 @@ final class CreateUserType extends AbstractContentType
 
         if (!$userCreateStruct instanceof UserCreateStruct) {
             throw new RuntimeException(
-                'Data payload must be an instance of Ibexa\\Contracts\\Core\\Repository\\Values\\User\\UserCreateStruct'
+                'Data payload must be an instance of Ibexa\Contracts\Core\Repository\Values\User\UserCreateStruct'
             );
         }
 

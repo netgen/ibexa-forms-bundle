@@ -32,8 +32,7 @@ final class FieldTypeHandlerRegistryTest extends TestCase
     {
         $this->expectException(RuntimeException::class);
 
-        $registry = new FieldTypeHandlerRegistry(['some_handler' => static function () {
-        }]);
+        $registry = new FieldTypeHandlerRegistry(['some_handler' => static function () {}]);
         $registry->get('some_handler');
     }
 

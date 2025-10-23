@@ -11,6 +11,7 @@ use Ibexa\Core\FieldType\Url as UrlValue;
 use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 use Netgen\Bundle\IbexaFormsBundle\Form\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
+
 use function is_array;
 
 final class Url extends FieldTypeHandler

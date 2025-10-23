@@ -37,7 +37,7 @@ final class IntegerHandlerTest extends TestCase
             ->getMock();
 
         $this->fieldDefinitionParameters = [
-            'id' => 'id',
+            'id' => 123,
             'identifier' => 'identifier',
             'isRequired' => true,
             'defaultValue' => new IntegerValue(5),
@@ -109,12 +109,11 @@ final class IntegerHandlerTest extends TestCase
         ];
 
         $this->formBuilder->expects(self::once())
-            ->method('add')->withConsecutive(
-                [
-                    $fieldDefinition->identifier,
-                    IntegerType::class,
-                    $options,
-                ]
+            ->method('add')
+            ->with(
+                $fieldDefinition->identifier,
+                IntegerType::class,
+                $options,
             );
 
         $languageCode = 'eng-GB';
@@ -147,9 +146,12 @@ final class IntegerHandlerTest extends TestCase
         ];
 
         $this->formBuilder->expects(self::once())
-            ->method('add')->withConsecutive([
-                $fieldDefinition->identifier, IntegerType::class, $options,
-            ]);
+            ->method('add')
+            ->with(
+                $fieldDefinition->identifier,
+                IntegerType::class,
+                $options,
+            );
 
         $languageCode = 'eng-GB';
 
@@ -183,9 +185,12 @@ final class IntegerHandlerTest extends TestCase
         ];
 
         $this->formBuilder->expects(self::once())
-            ->method('add')->withConsecutive([
-                $fieldDefinition->identifier, IntegerType::class, $options,
-            ]);
+            ->method('add')
+            ->with(
+                $fieldDefinition->identifier,
+                IntegerType::class,
+                $options,
+            );
 
         $languageCode = 'eng-GB';
 

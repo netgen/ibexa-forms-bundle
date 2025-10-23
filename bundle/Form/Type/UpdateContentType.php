@@ -25,7 +25,7 @@ final class UpdateContentType extends AbstractContentType
 
         if (!$dataWrapper instanceof DataWrapper) {
             throw new RuntimeException(
-                'Data must be an instance of Netgen\\IbexaFormsBundle\\Form\\DataWrapper'
+                'Data must be an instance of Netgen\IbexaFormsBundle\Form\DataWrapper'
             );
         }
 
@@ -33,7 +33,7 @@ final class UpdateContentType extends AbstractContentType
 
         if (!$content instanceof Content) {
             throw new RuntimeException(
-                'Data payload must be an instance of Ibexa\\Contracts\\Core\\Repository\\Values\\Content\\Content'
+                'Data payload must be an instance of Ibexa\Contracts\Core\Repository\Values\Content\Content'
             );
         }
 
@@ -41,7 +41,7 @@ final class UpdateContentType extends AbstractContentType
 
         if (!$contentUpdateStruct instanceof ContentUpdateStruct) {
             throw new RuntimeException(
-                'Data payload must be an instance of Ibexa\\Contracts\\Core\\Repository\\Values\\Content\\ContentUpdateStruct'
+                'Data payload must be an instance of Ibexa\Contracts\Core\Repository\Values\Content\ContentUpdateStruct'
             );
         }
 
@@ -49,7 +49,7 @@ final class UpdateContentType extends AbstractContentType
 
         if (!$contentType instanceof ContentType) {
             throw new RuntimeException(
-                'Data definition must be an instance of Ibexa\\Contracts\\Core\\Repository\\Values\\ContentType\\ContentType'
+                'Data definition must be an instance of Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType'
             );
         }
 

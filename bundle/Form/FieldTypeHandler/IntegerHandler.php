@@ -13,16 +13,14 @@ use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+
 use function is_int;
 
 final class IntegerHandler extends FieldTypeHandler
 {
-    protected FieldHelper $fieldHelper;
-
-    public function __construct(FieldHelper $fieldHelper)
-    {
-        $this->fieldHelper = $fieldHelper;
-    }
+    public function __construct(
+        protected FieldHelper $fieldHelper,
+    ) {}
 
     public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null): int
     {

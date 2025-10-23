@@ -56,7 +56,7 @@ final class InformationCollectionMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'name',
                                 'fieldTypeIdentifier' => 'eztext',
                                 'defaultValue' => new TextLineValue('Some name'),
@@ -83,10 +83,7 @@ final class InformationCollectionMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder('Symfony\Component\PropertyAccess\PropertyPathInterface')
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock('Symfony\Component\PropertyAccess\PropertyPathInterface');
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -132,7 +129,7 @@ final class InformationCollectionMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'test',
                                 'fieldTypeIdentifier' => 'eztext',
                                 'defaultValue' => new TextLineValue('Some name'),
@@ -155,10 +152,7 @@ final class InformationCollectionMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder('Symfony\Component\PropertyAccess\PropertyPathInterface')
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock('Symfony\Component\PropertyAccess\PropertyPathInterface');
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -198,7 +192,7 @@ final class InformationCollectionMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'name',
                                 'fieldTypeIdentifier' => 'eztext',
                                 'defaultValue' => new TextLineValue('Some name'),
@@ -225,10 +219,7 @@ final class InformationCollectionMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder('Symfony\Component\PropertyAccess\PropertyPathInterface')
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock('Symfony\Component\PropertyAccess\PropertyPathInterface');
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -261,7 +252,7 @@ final class InformationCollectionMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'test',
                                 'fieldTypeIdentifier' => 'eztext',
                                 'defaultValue' => new TextLineValue('Some name'),
@@ -284,10 +275,7 @@ final class InformationCollectionMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder('Symfony\Component\PropertyAccess\PropertyPathInterface')
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock('Symfony\Component\PropertyAccess\PropertyPathInterface');
 
         $propertyPath->expects(self::once())
             ->method('__toString')

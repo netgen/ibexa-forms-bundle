@@ -17,12 +17,12 @@ final class CustomFieldTypeHandlerTest extends TestCase
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('Not implemented.');
 
-        $formBuilder = $this->getMockForAbstractClass(FormBuilderInterface::class);
+        $formBuilder = $this->createMock(FormBuilderInterface::class);
         $fieldDefinition = $this->getMockBuilder(FieldDefinition::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        $content = $this->getMockForAbstractClass(Content::class);
+        $content = $this->createMock(Content::class);
         $language = 'eng-GB';
 
         $handler = new CustomFieldTypeHandler();

@@ -12,6 +12,7 @@ use Netgen\Bundle\IbexaFormsBundle\Form\Payload\InformationCollectionStruct;
 use RuntimeException;
 use Symfony\Component\Form\DataMapperInterface;
 use Symfony\Component\Form\FormBuilderInterface;
+
 use function array_keys;
 use function in_array;
 
@@ -41,7 +42,7 @@ final class InformationCollectionType extends AbstractContentType
 
         if (!$dataWrapper instanceof DataWrapper) {
             throw new RuntimeException(
-                'Data must be an instance of Netgen\\IbexaFormsBundle\\Form\\DataWrapper'
+                'Data must be an instance of Netgen\IbexaFormsBundle\Form\DataWrapper'
             );
         }
 
@@ -50,7 +51,7 @@ final class InformationCollectionType extends AbstractContentType
 
         if (!$payload instanceof InformationCollectionStruct) {
             throw new RuntimeException(
-                'Data payload must be an instance of Netgen\\Bundle\\IbexaFormsBundle\\Form\\Payload\\InformationCollectionStruct'
+                'Data payload must be an instance of Netgen\Bundle\IbexaFormsBundle\Form\Payload\InformationCollectionStruct'
             );
         }
 
@@ -59,7 +60,7 @@ final class InformationCollectionType extends AbstractContentType
 
         if (!$contentType instanceof ContentType) {
             throw new RuntimeException(
-                'Data definition must be an instance of Ibexa\\Contracts\\Core\\Repository\\Values\\ContentType\\ContentType'
+                'Data definition must be an instance of Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType'
             );
         }
 

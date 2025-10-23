@@ -29,7 +29,7 @@ final class UpdateUserTypeTest extends TestCase
     {
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $updateUserType = new UpdateUserType($handlerRegistry, $dataMapper);
         self::assertInstanceOf(AbstractType::class, $updateUserType);
@@ -42,7 +42,7 @@ final class UpdateUserTypeTest extends TestCase
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -61,7 +61,7 @@ final class UpdateUserTypeTest extends TestCase
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -80,7 +80,7 @@ final class UpdateUserTypeTest extends TestCase
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -101,7 +101,7 @@ final class UpdateUserTypeTest extends TestCase
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -123,7 +123,7 @@ final class UpdateUserTypeTest extends TestCase
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -144,7 +144,7 @@ final class UpdateUserTypeTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 654,
                                 'identifier' => 'identifier',
                                 'fieldTypeIdentifier' => 'field_type',
                             ]
@@ -162,10 +162,7 @@ final class UpdateUserTypeTest extends TestCase
 
     public function testBuildForm(): void
     {
-        $fieldTypeHandler = $this->getMockBuilder(FieldTypeHandler::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['buildFieldUpdateForm'])
-            ->getMockForAbstractClass();
+        $fieldTypeHandler = $this->createMock(FieldTypeHandler::class);
 
         $fieldTypeHandler->expects(self::once())
             ->method('buildFieldUpdateForm');
@@ -173,7 +170,7 @@ final class UpdateUserTypeTest extends TestCase
         $handlerRegistry = new FieldTypeHandlerRegistry();
         $handlerRegistry->register('field_type', $fieldTypeHandler);
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -199,7 +196,7 @@ final class UpdateUserTypeTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'identifier',
                                 'fieldTypeIdentifier' => 'field_type',
                             ]

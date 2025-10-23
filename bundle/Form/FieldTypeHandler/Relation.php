@@ -16,12 +16,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 final class Relation extends FieldTypeHandler
 {
-    private Repository $repository;
-
-    public function __construct(Repository $repository)
-    {
-        $this->repository = $repository;
-    }
+    public function __construct(
+        private Repository $repository,
+    ) {}
 
     public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null)
     {

@@ -11,6 +11,7 @@ use Ibexa\Core\FieldType\MapLocation as MapLocationValue;
 use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 use Netgen\Bundle\IbexaFormsBundle\Form\Type\MapType;
 use Symfony\Component\Form\FormBuilderInterface;
+
 use function is_array;
 
 final class MapLocation extends FieldTypeHandler

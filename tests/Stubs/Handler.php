@@ -13,7 +13,5 @@ final class Handler extends FieldTypeHandler
     /**
      * @return mixed
      */
-    public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null)
-    {
-    }
+    public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null) {}
 }

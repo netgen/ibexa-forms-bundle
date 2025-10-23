@@ -64,7 +64,7 @@ final class UpdateUserMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'name',
                                 'fieldTypeIdentifier' => 'eztext',
                                 'defaultValue' => new TextLineValue('Some name'),
@@ -107,10 +107,7 @@ final class UpdateUserMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -141,7 +138,7 @@ final class UpdateUserMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'name',
                                 'fieldTypeIdentifier' => 'ezuser',
                                 'defaultValue' => new TextLineValue('Some name'),
@@ -165,6 +162,10 @@ final class UpdateUserMapperTest extends TestCase
             ->onlyMethods(['getFieldValue'])
             ->getMock();
 
+        $reflection = new \ReflectionClass($user);
+        $emailProperty = $reflection->getProperty('email');
+        $emailProperty->setValue($user, 'test@example.com');
+
         $data = new DataWrapper($userUpdateStruct, $contentType, $user);
 
         $config = $this->getMockBuilder(FormConfigBuilder::class)
@@ -176,10 +177,7 @@ final class UpdateUserMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -213,7 +211,7 @@ final class UpdateUserMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'test',
                                 'fieldTypeIdentifier' => 'ezuser',
                                 'defaultValue' => new TextLineValue('Some name'),
@@ -248,10 +246,7 @@ final class UpdateUserMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -279,7 +274,7 @@ final class UpdateUserMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'name',
                                 'fieldTypeIdentifier' => 'eztext',
                                 'defaultValue' => new TextLineValue('Some name'),
@@ -318,10 +313,7 @@ final class UpdateUserMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -361,7 +353,7 @@ final class UpdateUserMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'name',
                                 'fieldTypeIdentifier' => 'ezuser',
                                 'defaultValue' => new TextLineValue('Some name'),
@@ -406,10 +398,7 @@ final class UpdateUserMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -451,7 +440,7 @@ final class UpdateUserMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'test',
                                 'fieldTypeIdentifier' => 'eztext',
                                 'defaultValue' => new TextLineValue('Some name'),
@@ -480,10 +469,7 @@ final class UpdateUserMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -523,7 +509,7 @@ final class UpdateUserMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'name',
                                 'fieldTypeIdentifier' => 'eztext',
                                 'defaultValue' => new TextLineValue('Some name'),
@@ -558,10 +544,7 @@ final class UpdateUserMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $propertyPath->expects(self::once())
             ->method('__toString')

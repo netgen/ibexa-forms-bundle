@@ -15,19 +15,16 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 final class Checkbox extends FieldTypeHandler
 {
-    protected FieldHelper $fieldHelper;
-
-    public function __construct(FieldHelper $fieldHelper)
-    {
-        $this->fieldHelper = $fieldHelper;
-    }
+    public function __construct(
+        protected FieldHelper $fieldHelper,
+    ) {}
 
     public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null): bool
     {
         return $value->bool;
     }
 
-    public function convertFieldValueFromForm($data): CheckBoxValue\Value
+    public function convertFieldValueFromForm($data): CheckboxValue\Value
     {
         return new CheckboxValue\Value($data);
     }

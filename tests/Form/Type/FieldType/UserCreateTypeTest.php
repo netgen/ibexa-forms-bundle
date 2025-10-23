@@ -60,19 +60,28 @@ final class UserCreateTypeTest extends TestCase
             ],
         ];
 
-        $formBuilder->expects(self::at(0))
+        $formBuilder->expects(self::exactly(3))
             ->method('add')
-            ->willReturn($formBuilder)
-            ->with('email', EmailType::class, $emailOptions);
+            ->willReturnCallback(static function ($name, $type, $options = []) use ($formBuilder, $emailOptions, $usernameOptions, $passwordOptions) {
+                static $callCount = 0;
 
-        $formBuilder->expects(self::at(1))
-            ->method('add')
-            ->willReturn($formBuilder)
-            ->with('username', TextType::class, $usernameOptions);
+                if ($callCount === 0) {
+                    self::assertSame('email', $name);
+                    self::assertSame(EmailType::class, $type);
+                    self::assertEquals($emailOptions, $options);
+                } elseif ($callCount === 1) {
+                    self::assertSame('username', $name);
+                    self::assertSame(TextType::class, $type);
+                    self::assertEquals($usernameOptions, $options);
+                } elseif ($callCount === 2) {
+                    self::assertSame('password', $name);
+                    self::assertSame(RepeatedType::class, $type);
+                    self::assertEquals($passwordOptions, $options);
+                }
+                ++$callCount;
 
-        $formBuilder->expects(self::at(2))
-            ->method('add')
-            ->with('password', RepeatedType::class, $passwordOptions);
+                return $formBuilder;
+            });
 
         $userCreateType = new UserCreateType();
         $userCreateType->buildForm($formBuilder, []);

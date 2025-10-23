@@ -24,7 +24,7 @@ final class CreateContentTypeTest extends TestCase
     {
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $updateUserType = new CreateContentType($handlerRegistry, $dataMapper);
         self::assertInstanceOf(AbstractType::class, $updateUserType);
@@ -37,7 +37,7 @@ final class CreateContentTypeTest extends TestCase
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -56,7 +56,7 @@ final class CreateContentTypeTest extends TestCase
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -70,10 +70,7 @@ final class CreateContentTypeTest extends TestCase
 
     public function testBuildForm(): void
     {
-        $fieldTypeHandler = $this->getMockBuilder(FieldTypeHandler::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['buildFieldCreateForm'])
-            ->getMockForAbstractClass();
+        $fieldTypeHandler = $this->createMock(FieldTypeHandler::class);
 
         $fieldTypeHandler->expects(self::once())
             ->method('buildFieldCreateForm');
@@ -81,7 +78,7 @@ final class CreateContentTypeTest extends TestCase
         $handlerRegistry = new FieldTypeHandlerRegistry();
         $handlerRegistry->register('field_type', $fieldTypeHandler);
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -95,7 +92,7 @@ final class CreateContentTypeTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'identifier',
                                 'fieldTypeIdentifier' => 'field_type',
                             ]
@@ -114,17 +111,14 @@ final class CreateContentTypeTest extends TestCase
 
     public function testBuildFormContinueIfFieldIdentifierIsIbexaUser(): void
     {
-        $fieldTypeHandler = $this->getMockBuilder(FieldTypeHandler::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['buildFieldCreateForm'])
-            ->getMockForAbstractClass();
+        $fieldTypeHandler = $this->createMock(FieldTypeHandler::class);
 
         $fieldTypeHandler->expects(self::never())
             ->method('buildFieldCreateForm');
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -138,7 +132,7 @@ final class CreateContentTypeTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'identifier',
                                 'fieldTypeIdentifier' => 'ezuser',
                             ]

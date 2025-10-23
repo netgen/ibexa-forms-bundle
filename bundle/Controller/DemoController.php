@@ -64,6 +64,7 @@ final class DemoController extends Controller
                 $repository->commit();
             } catch (Exception $e) {
                 $repository->rollback();
+
                 // @todo do something else if needed
                 throw $e;
             }
@@ -109,7 +110,7 @@ final class DemoController extends Controller
         $formBuilder->add('save', SubmitType::class, ['label' => 'Update']);
 
         $form = $formBuilder->getForm();
-        //$form = $this->createForm(UpdateContentType::class, $data);
+        // $form = $this->createForm(UpdateContentType::class, $data);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -126,6 +127,7 @@ final class DemoController extends Controller
                 $repository->commit();
             } catch (Exception $e) {
                 $repository->rollback();
+
                 // @todo do something else if needed
                 throw $e;
             }
