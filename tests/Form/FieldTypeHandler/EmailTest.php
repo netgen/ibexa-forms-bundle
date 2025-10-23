@@ -52,7 +52,7 @@ final class EmailTest extends TestCase
 
         $fieldDefinition = new FieldDefinition(
             [
-                'id' => 'id',
+                'id' => 123,
                 'identifier' => 'identifier',
                 'validatorConfiguration' => ['EmailAddressValidator' => true],
                 'isRequired' => true,

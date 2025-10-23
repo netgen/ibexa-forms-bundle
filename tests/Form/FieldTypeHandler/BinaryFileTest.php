@@ -25,7 +25,7 @@ final class BinaryFileTest extends TestCase
     public function testConvertFieldValueToForm(): void
     {
         $binaryFile = new BinaryFile();
-        $binaryFileValue = $this->getMockForAbstractClass(Value::class);
+        $binaryFileValue = $this->createMock(Value::class);
 
         $returnedValue = $binaryFile->convertFieldValueToForm($binaryFileValue);
 
@@ -63,7 +63,7 @@ final class BinaryFileTest extends TestCase
 
         $fieldDefinition = new FieldDefinition(
             [
-                'id' => 'id',
+                'id' => 123,
                 'identifier' => 'identifier',
                 'isRequired' => true,
                 'descriptions' => ['fre-FR' => 'fre-FR'],

@@ -51,14 +51,24 @@ final class UserUpdateTypeTest extends TestCase
             ],
         ];
 
-        $formBuilder->expects(self::at(0))
+        $formBuilder->expects(self::exactly(2))
             ->method('add')
-            ->willReturn($formBuilder)
-            ->with('email', EmailType::class, $emailOptions);
+            ->willReturnCallback(function ($name, $type, $options = []) use ($formBuilder, $emailOptions, $passwordOptions) {
+                static $callCount = 0;
 
-        $formBuilder->expects(self::at(1))
-            ->method('add')
-            ->with('password', RepeatedType::class, $passwordOptions);
+                if ($callCount === 0) {
+                    self::assertSame('email', $name);
+                    self::assertSame(EmailType::class, $type);
+                    self::assertEquals($emailOptions, $options);
+                } elseif ($callCount === 1) {
+                    self::assertSame('password', $name);
+                    self::assertSame(RepeatedType::class, $type);
+                    self::assertEquals($passwordOptions, $options);
+                }
+                $callCount++;
+
+                return $formBuilder;
+            });
 
         $userCreateType = new UserUpdateType();
         $userCreateType->buildForm($formBuilder, []);

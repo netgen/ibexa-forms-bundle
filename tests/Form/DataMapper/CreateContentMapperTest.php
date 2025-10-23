@@ -77,7 +77,7 @@ final class CreateContentMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'test',
                                 'fieldTypeIdentifier' => 'eztext',
                                 'defaultValue' => new Value('Some name'),
@@ -100,10 +100,7 @@ final class CreateContentMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -131,7 +128,7 @@ final class CreateContentMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'name',
                                 'fieldTypeIdentifier' => 'eztext',
                                 'defaultValue' => new Value('Some name'),
@@ -158,10 +155,7 @@ final class CreateContentMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -196,10 +190,7 @@ final class CreateContentMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $form = $this->getForm();
 
@@ -251,7 +242,7 @@ final class CreateContentMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'name',
                                 'fieldTypeIdentifier' => 'eztext',
                                 'defaultValue' => new Value('Some name'),
@@ -266,7 +257,10 @@ final class CreateContentMapperTest extends TestCase
             ->method('convertFieldValueFromForm')
             ->willReturn(new TextLineValue('Some name'));
 
-        $contentCreateStruct = new ContentCreateStruct(['contentType' => $contentType]);
+        $contentCreateStruct = new ContentCreateStruct([
+            'contentType' => $contentType,
+            'mainLanguageCode' => 'eng-GB',
+        ]);
         $data = new DataWrapper($contentCreateStruct);
 
         $config = $this->getMockBuilder(FormConfigBuilder::class)
@@ -278,10 +272,7 @@ final class CreateContentMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -327,7 +318,7 @@ final class CreateContentMapperTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'test',
                                 'fieldTypeIdentifier' => 'eztext',
                                 'defaultValue' => new Value('Some name'),
@@ -350,10 +341,7 @@ final class CreateContentMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $propertyPath->expects(self::once())
             ->method('__toString')
@@ -403,10 +391,7 @@ final class CreateContentMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $form = $this->getForm();
 
@@ -455,10 +440,7 @@ final class CreateContentMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $form = $this->getForm();
 
@@ -514,10 +496,7 @@ final class CreateContentMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $form = $this->getForm();
 
@@ -567,10 +546,7 @@ final class CreateContentMapperTest extends TestCase
             ->method('getMapped')
             ->willReturn(true);
 
-        $propertyPath = $this->getMockBuilder(PropertyPathInterface::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['__toString'])
-            ->getMockForAbstractClass();
+        $propertyPath = $this->createMock(PropertyPathInterface::class);
 
         $propertyPath->expects(self::never())
             ->method('__toString')

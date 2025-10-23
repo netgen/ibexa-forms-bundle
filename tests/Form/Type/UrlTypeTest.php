@@ -26,13 +26,22 @@ final class UrlTypeTest extends TestCase
             ->onlyMethods(['add'])
             ->getMock();
 
-        $formBuilder->expects(self::at(0))
+        $invocation = 0;
+        $formBuilder->expects(self::exactly(2))
             ->method('add')
-            ->with('url', CoreUrlType::class, ['constraints' => new Assert\Url()]);
-
-        $formBuilder->expects(self::at(1))
-            ->method('add')
-            ->with('text', TextType::class);
+            ->willReturnCallback(function (string $name, ?string $type = null, array $options = []) use (&$invocation, $formBuilder) {
+                if ($invocation === 0) {
+                    self::assertSame('url', $name);
+                    self::assertSame(CoreUrlType::class, $type);
+                    self::assertArrayHasKey('constraints', $options);
+                    self::assertInstanceOf(Assert\Url::class, $options['constraints']);
+                } elseif ($invocation === 1) {
+                    self::assertSame('text', $name);
+                    self::assertSame(TextType::class, $type);
+                }
+                $invocation++;
+                return $formBuilder;
+            });
 
         $url = new UrlType();
         $url->buildForm($formBuilder, []);

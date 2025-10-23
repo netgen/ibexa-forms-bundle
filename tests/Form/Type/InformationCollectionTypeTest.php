@@ -25,7 +25,7 @@ final class InformationCollectionTypeTest extends TestCase
     {
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $infoCollectionType = new InformationCollectionType(
             $handlerRegistry,
@@ -43,11 +43,11 @@ final class InformationCollectionTypeTest extends TestCase
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
-                        ->getMock();
+            ->getMock();
 
         $options = ['data' => 'data'];
 
@@ -67,7 +67,7 @@ final class InformationCollectionTypeTest extends TestCase
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -91,7 +91,7 @@ final class InformationCollectionTypeTest extends TestCase
 
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -114,7 +114,7 @@ final class InformationCollectionTypeTest extends TestCase
     {
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -133,7 +133,7 @@ final class InformationCollectionTypeTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'identifier',
                                 'fieldTypeIdentifier' => 'field_type',
                                 'isInfoCollector' => false,
@@ -159,7 +159,7 @@ final class InformationCollectionTypeTest extends TestCase
     {
         $handlerRegistry = new FieldTypeHandlerRegistry();
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -178,7 +178,7 @@ final class InformationCollectionTypeTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'identifier',
                                 'fieldTypeIdentifier' => 'ezuser',
                                 'isInfoCollector' => false,
@@ -202,10 +202,7 @@ final class InformationCollectionTypeTest extends TestCase
 
     public function testBuildForm(): void
     {
-        $fieldTypeHandler = $this->getMockBuilder(FieldTypeHandler::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['buildFieldCreateForm'])
-            ->getMockForAbstractClass();
+        $fieldTypeHandler = $this->createMock(FieldTypeHandler::class);
 
         $fieldTypeHandler->expects(self::once())
             ->method('buildFieldCreateForm');
@@ -213,7 +210,7 @@ final class InformationCollectionTypeTest extends TestCase
         $handlerRegistry = new FieldTypeHandlerRegistry();
         $handlerRegistry->register('field_type', $fieldTypeHandler);
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -230,7 +227,7 @@ final class InformationCollectionTypeTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'identifier',
                                 'fieldTypeIdentifier' => 'field_type',
                                 'isInfoCollector' => true,
@@ -254,10 +251,7 @@ final class InformationCollectionTypeTest extends TestCase
 
     public function testBuildFormTriggerMainLanguageCodeFromContentType(): void
     {
-        $fieldTypeHandler = $this->getMockBuilder(FieldTypeHandler::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['buildFieldCreateForm'])
-            ->getMockForAbstractClass();
+        $fieldTypeHandler = $this->createMock(FieldTypeHandler::class);
 
         $fieldTypeHandler->expects(self::once())
             ->method('buildFieldCreateForm');
@@ -265,7 +259,7 @@ final class InformationCollectionTypeTest extends TestCase
         $handlerRegistry = new FieldTypeHandlerRegistry();
         $handlerRegistry->register('field_type', $fieldTypeHandler);
 
-        $dataMapper = $this->getMockForAbstractClass(DataMapperInterface::class);
+        $dataMapper = $this->createMock(DataMapperInterface::class);
 
         $formBuilder = $this->getMockBuilder(FormBuilder::class)
             ->disableOriginalConstructor()
@@ -282,7 +276,7 @@ final class InformationCollectionTypeTest extends TestCase
                     [
                         new FieldDefinition(
                             [
-                                'id' => 'id',
+                                'id' => 123,
                                 'identifier' => 'identifier',
                                 'fieldTypeIdentifier' => 'field_type',
                                 'isInfoCollector' => true,

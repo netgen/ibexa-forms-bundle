@@ -118,7 +118,7 @@ final class RelationTest extends TestCase
 
         $fieldDefinition = new FieldDefinition(
             [
-                'id' => 'id',
+                'id' => 123,
                 'identifier' => 'identifier',
                 'isRequired' => true,
                 'descriptions' => ['fre-FR' => 'fre-FR'],
@@ -147,7 +147,7 @@ final class RelationTest extends TestCase
                                     'versionInfo' => new VersionInfo(['initialLanguageCode' => 'eng-GB', 'names' => ['eng-GB' => 'test1']]),
                                 ]
                             ),
-                            'contentInfo' => new ContentInfo(),
+                            'contentInfo' => new ContentInfo(['id' => 123]),
                         ]
                     ),
                     new Location(
@@ -157,7 +157,7 @@ final class RelationTest extends TestCase
                                     'versionInfo' => new VersionInfo(['initialLanguageCode' => 'eng-GB', 'names' => ['eng-GB' => 'test2']]),
                                 ]
                             ),
-                            'contentInfo' => new ContentInfo(),
+                            'contentInfo' => new ContentInfo(['id' => 246]),
                         ]
                     ),
                 ],
@@ -182,7 +182,7 @@ final class RelationTest extends TestCase
 
         $fieldDefinition = new FieldDefinition(
             [
-                'id' => 'id',
+                'id' => 123,
                 'identifier' => 'identifier',
                 'isRequired' => true,
                 'descriptions' => ['fre-FR' => 'fre-FR'],

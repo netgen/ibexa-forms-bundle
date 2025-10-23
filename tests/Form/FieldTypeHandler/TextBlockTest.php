@@ -62,7 +62,7 @@ final class TextBlockTest extends TestCase
 
         $fieldDefinition = new FieldDefinition(
             [
-                'id' => 'id',
+                'id' => 123,
                 'identifier' => 'identifier',
                 'isRequired' => true,
                 'descriptions' => ['fre-FR' => 'fre-FR'],

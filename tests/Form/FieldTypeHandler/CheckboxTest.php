@@ -42,7 +42,7 @@ final class CheckboxTest extends TestCase
             ->getMock();
 
         $this->fieldDefinitionParameters = [
-            'id' => 'id',
+            'id' => 123,
             'identifier' => 'identifier',
             'isRequired' => true,
             'defaultValue' => new CheckboxValue(true),
@@ -96,10 +96,11 @@ final class CheckboxTest extends TestCase
         ];
 
         $this->formBuilder->expects(self::once())
-            ->method('add')->withConsecutive(
-                [
-                    $fieldDefinition->identifier, CheckboxType::class, $options,
-                ]
+            ->method('add')
+            ->with(
+                $fieldDefinition->identifier,
+                CheckboxType::class,
+                $options,
             );
 
         $checkboxHandler = new Checkbox($this->fieldHelper);
@@ -123,9 +124,12 @@ final class CheckboxTest extends TestCase
         ];
 
         $this->formBuilder->expects(self::once())
-            ->method('add')->withConsecutive([
-                $fieldDefinition->identifier, CheckboxType::class, $options,
-            ]);
+            ->method('add')
+            ->with(
+                $fieldDefinition->identifier,
+                CheckboxType::class,
+                $options,
+            );
 
         $checkboxHandler = new Checkbox($this->fieldHelper);
         $checkboxHandler->buildFieldUpdateForm($this->formBuilder, $fieldDefinition, $this->content, 'eng-GB');
@@ -152,9 +156,12 @@ final class CheckboxTest extends TestCase
         ];
 
         $this->formBuilder->expects(self::once())
-            ->method('add')->withConsecutive([
-                $fieldDefinition->identifier, CheckboxType::class, $options,
-            ]);
+            ->method('add')
+            ->with(
+                $fieldDefinition->identifier,
+                CheckboxType::class,
+                $options,
+            );
 
         $checkboxHandler = new Checkbox($this->fieldHelper);
         $checkboxHandler->buildFieldUpdateForm($this->formBuilder, $fieldDefinition, $this->content, 'eng-GB');

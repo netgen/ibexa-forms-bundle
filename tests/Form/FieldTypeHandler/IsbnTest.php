@@ -62,7 +62,7 @@ final class IsbnTest extends TestCase
 
         $fieldDefinition = new FieldDefinition(
             [
-                'id' => 'id',
+                'id' => 123,
                 'identifier' => 'identifier',
                 'isRequired' => true,
                 'defaultValue' => new IsbnValue('5367GBMK'),
@@ -89,7 +89,7 @@ final class IsbnTest extends TestCase
 
         $fieldDefinition = new FieldDefinition(
             [
-                'id' => 'id',
+                'id' => 123,
                 'identifier' => 'identifier',
                 'isRequired' => true,
                 'defaultValue' => new IsbnValue('5367GBMK'),

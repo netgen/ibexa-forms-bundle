@@ -42,7 +42,7 @@ final class FloatHandlerTest extends TestCase
             ->getMock();
 
         $this->fieldDefinitionParameters = [
-            'id' => 'id',
+            'id' => 123,
             'identifier' => 'identifier',
             'isRequired' => true,
             'defaultValue' => new FloatValue(4.74),
@@ -114,10 +114,11 @@ final class FloatHandlerTest extends TestCase
         ];
 
         $this->formBuilder->expects(self::once())
-            ->method('add')->withConsecutive(
-                [
-                    $fieldDefinition->identifier, NumberType::class, $options,
-                ]
+            ->method('add')
+            ->with(
+                $fieldDefinition->identifier,
+                NumberType::class,
+                $options,
             );
 
         $floatHandler = new FloatHandler($this->fieldHelper);
@@ -144,9 +145,12 @@ final class FloatHandlerTest extends TestCase
         ];
 
         $this->formBuilder->expects(self::once())
-            ->method('add')->withConsecutive([
-                $fieldDefinition->identifier, NumberType::class, $options,
-            ]);
+            ->method('add')
+            ->with(
+                $fieldDefinition->identifier,
+                NumberType::class,
+                $options,
+            );
 
         $floatHandler = new FloatHandler($this->fieldHelper);
         $floatHandler->buildFieldUpdateForm($this->formBuilder, $fieldDefinition, $this->content, 'eng-GB');
@@ -174,9 +178,12 @@ final class FloatHandlerTest extends TestCase
         ];
 
         $this->formBuilder->expects(self::once())
-            ->method('add')->withConsecutive([
-                $fieldDefinition->identifier, NumberType::class, $options,
-            ]);
+            ->method('add')
+            ->with(
+                $fieldDefinition->identifier,
+                NumberType::class,
+                $options,
+            );
 
         $floatHandler = new FloatHandler($this->fieldHelper);
         $floatHandler->buildFieldUpdateForm($this->formBuilder, $fieldDefinition, $this->content, 'eng-GB');

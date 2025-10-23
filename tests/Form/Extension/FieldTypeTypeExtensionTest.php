@@ -40,7 +40,7 @@ final class FieldTypeTypeExtensionTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $form = $this->getMockForAbstractClass(FormInterface::class);
+        $form = $this->createMock(FormInterface::class);
 
         $options = [
             'ibexa_forms' => [
