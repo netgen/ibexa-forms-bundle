@@ -17,12 +17,9 @@ use function is_int;
 
 final class IntegerHandler extends FieldTypeHandler
 {
-    protected FieldHelper $fieldHelper;
-
-    public function __construct(FieldHelper $fieldHelper)
-    {
-        $this->fieldHelper = $fieldHelper;
-    }
+    public function __construct(
+        protected FieldHelper $fieldHelper,
+    ) {}
 
     public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null): int
     {

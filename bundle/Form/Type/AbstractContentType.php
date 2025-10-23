@@ -10,13 +10,8 @@ use Symfony\Component\Form\DataMapperInterface;
 
 abstract class AbstractContentType extends AbstractType
 {
-    protected FieldTypeHandlerRegistry $fieldTypeHandlerRegistry;
-
-    protected DataMapperInterface $dataMapper;
-
-    public function __construct(FieldTypeHandlerRegistry $fieldTypeHandlerRegistry, DataMapperInterface $dataMapper)
-    {
-        $this->fieldTypeHandlerRegistry = $fieldTypeHandlerRegistry;
-        $this->dataMapper = $dataMapper;
-    }
+    public function __construct(
+        protected FieldTypeHandlerRegistry $fieldTypeHandlerRegistry,
+        protected DataMapperInterface $dataMapper,
+    ) {}
 }

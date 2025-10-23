@@ -23,12 +23,9 @@ final class RelationList extends FieldTypeHandler
     public const TPLBASED_MULTI = 5;
     public const TPLBASED_SINGLE = 6;
 
-    private Repository $repository;
-
-    public function __construct(Repository $repository)
-    {
-        $this->repository = $repository;
-    }
+    public function __construct(
+        private Repository $repository,
+    ) {}
 
     public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null): ?array
     {

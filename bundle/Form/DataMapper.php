@@ -11,6 +11,7 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use Symfony\Component\PropertyAccess\PropertyPathInterface;
+
 use function is_array;
 use function is_object;
 
@@ -19,19 +20,14 @@ use function is_object;
  */
 abstract class DataMapper implements DataMapperInterface
 {
-    protected FieldTypeHandlerRegistry $fieldTypeHandlerRegistry;
-
-    protected PropertyAccessorInterface $propertyAccessor;
-
     /**
      * Creates a new property path mapper.
      */
     public function __construct(
-        FieldTypeHandlerRegistry $fieldTypeHandlerRegistry,
-        ?PropertyAccessorInterface $propertyAccessor = null
+        protected FieldTypeHandlerRegistry $fieldTypeHandlerRegistry,
+        protected ?PropertyAccessorInterface $propertyAccessor = null
     ) {
-        $this->fieldTypeHandlerRegistry = $fieldTypeHandlerRegistry;
-        $this->propertyAccessor = $propertyAccessor ?: PropertyAccess::createPropertyAccessor();
+        $this->propertyAccessor ??= PropertyAccess::createPropertyAccessor();
     }
 
     public function mapDataToForms($data, $forms): void
