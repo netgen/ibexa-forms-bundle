@@ -11,13 +11,14 @@ use Ibexa\Core\FieldType\Selection as SelectionValue;
 use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
+
 use function array_flip;
 
 final class Selection extends FieldTypeHandler
 {
-    public function convertFieldValueFromForm($value): SelectionValue\Value
+    public function convertFieldValueFromForm($data): SelectionValue\Value
     {
-        return new SelectionValue\Value((array) $value);
+        return new SelectionValue\Value((array) $data);
     }
 
     public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null)
