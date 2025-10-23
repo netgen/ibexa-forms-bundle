@@ -29,7 +29,7 @@ final class UrlTypeTest extends TestCase
         $invocation = 0;
         $formBuilder->expects(self::exactly(2))
             ->method('add')
-            ->willReturnCallback(function (string $name, ?string $type = null, array $options = []) use (&$invocation, $formBuilder) {
+            ->willReturnCallback(static function (string $name, ?string $type = null, array $options = []) use (&$invocation, $formBuilder) {
                 if ($invocation === 0) {
                     self::assertSame('url', $name);
                     self::assertSame(CoreUrlType::class, $type);
@@ -39,7 +39,8 @@ final class UrlTypeTest extends TestCase
                     self::assertSame('text', $name);
                     self::assertSame(TextType::class, $type);
                 }
-                $invocation++;
+                ++$invocation;
+
                 return $formBuilder;
             });
 

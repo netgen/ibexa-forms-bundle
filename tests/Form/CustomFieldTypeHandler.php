@@ -10,7 +10,5 @@ use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 
 final class CustomFieldTypeHandler extends FieldTypeHandler
 {
-    public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null): void
-    {
-    }
+    public function convertFieldValueToForm(Value $value, ?FieldDefinition $fieldDefinition = null): void {}
 }

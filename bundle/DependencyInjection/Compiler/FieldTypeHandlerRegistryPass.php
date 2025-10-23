@@ -23,8 +23,8 @@ final class FieldTypeHandlerRegistryPass implements CompilerPassInterface
             foreach ($attributes as $attribute) {
                 if (!isset($attribute['alias'])) {
                     throw new LogicException(
-                        "'netgen.ibexa_forms.form.fieldtype_handler' service tag " .
-                        "needs an 'alias' attribute to identify the field type. None given."
+                        "'netgen.ibexa_forms.form.fieldtype_handler' service tag "
+                        . "needs an 'alias' attribute to identify the field type. None given."
                     );
                 }
 

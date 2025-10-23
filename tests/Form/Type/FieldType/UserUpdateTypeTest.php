@@ -53,7 +53,7 @@ final class UserUpdateTypeTest extends TestCase
 
         $formBuilder->expects(self::exactly(2))
             ->method('add')
-            ->willReturnCallback(function ($name, $type, $options = []) use ($formBuilder, $emailOptions, $passwordOptions) {
+            ->willReturnCallback(static function ($name, $type, $options = []) use ($formBuilder, $emailOptions, $passwordOptions) {
                 static $callCount = 0;
 
                 if ($callCount === 0) {
@@ -65,7 +65,7 @@ final class UserUpdateTypeTest extends TestCase
                     self::assertSame(RepeatedType::class, $type);
                     self::assertEquals($passwordOptions, $options);
                 }
-                $callCount++;
+                ++$callCount;
 
                 return $formBuilder;
             });

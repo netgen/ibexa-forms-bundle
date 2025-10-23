@@ -6,6 +6,7 @@ namespace Netgen\Bundle\IbexaFormsBundle\Form;
 
 use OutOfBoundsException;
 use RuntimeException;
+
 use function gettype;
 use function is_callable;
 
@@ -58,8 +59,8 @@ final class FieldTypeHandlerRegistry
 
             if (!$this->map[$identifier] instanceof FieldTypeHandlerInterface) {
                 throw new RuntimeException(
-                    "FieldTypeHandler '{$identifier}' callable did not return a FieldTypeHandlerInterface instance, " .
-                    'instead: ' . gettype($this->map[$identifier])
+                    "FieldTypeHandler '{$identifier}' callable did not return a FieldTypeHandlerInterface instance, "
+                    . 'instead: ' . gettype($this->map[$identifier])
                 );
             }
         }

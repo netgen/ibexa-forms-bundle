@@ -11,6 +11,7 @@ use Ibexa\Core\FieldType\Country\Value as CountryValue;
 use Netgen\Bundle\IbexaFormsBundle\Form\FieldTypeHandler;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
+
 use function array_flip;
 use function array_key_exists;
 use function array_keys;
